@@ -1,0 +1,61 @@
+name: Sync matches to Cloudflare R2
+
+on:
+  workflow_dispatch:
+  schedule:
+    # GitHub Actions 定时任务通常不保证 3 分钟精确执行，5 分钟是更稳妥的起步值。
+    - cron: "*/5 * * * *"
+
+concurrency:
+  group: sync-matches-to-r2
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate matches.json
+        run: npm run sync:matches:once
+        env:
+          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+          FOOTBALL_DATA_COMPETITION_CODE: ${{ vars.FOOTBALL_DATA_COMPETITION_CODE || 'WC' }}
+          MATCHES_OUTPUT_PATH: public/matches.json
+
+      - name: Validate generated file
+        run: |
+          test -s public/matches.json
+          node -e "const fs=require('fs'); const data=JSON.parse(fs.readFileSync('public/matches.json','utf8')); if(!Array.isArray(data) || data.length===0) throw new Error('matches.json must be a non-empty array'); console.log('matches:', data.length)"
+
+
+      - name: Upload matches.json to R2
+        run: |
+          aws s3 cp public/matches.json "s3://${{ secrets.R2_BUCKET_NAME }}/matches.json" \
+            --endpoint-url "https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com" \
+            --content-type "application/json; charset=utf-8" \
+            --cache-control "public, max-age=180"
+        env:
+      
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_REGION: auto
+      
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+        

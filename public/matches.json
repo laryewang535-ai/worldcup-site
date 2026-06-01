@@ -1,0 +1,722 @@
+[
+  {
+    "id": "fd-537327",
+    "homeId": "mexico",
+    "awayId": "south-africa",
+    "homeDisplay": "Mexico",
+    "awayDisplay": "South Africa",
+    "kickoffUtc": "2026-06-11T19:00:00.000Z",
+    "stage": "GROUP A · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537328",
+    "homeId": "south-korea",
+    "awayId": "czechia",
+    "homeDisplay": "South Korea",
+    "awayDisplay": "Czechia",
+    "kickoffUtc": "2026-06-12T02:00:00.000Z",
+    "stage": "GROUP A · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537333",
+    "homeId": "canada",
+    "awayId": "bosnia-herzegovina",
+    "homeDisplay": "Canada",
+    "awayDisplay": "Bosnia-Herzegovina",
+    "kickoffUtc": "2026-06-12T19:00:00.000Z",
+    "stage": "GROUP B · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537345",
+    "homeId": "united-states",
+    "awayId": "paraguay",
+    "homeDisplay": "United States",
+    "awayDisplay": "Paraguay",
+    "kickoffUtc": "2026-06-13T01:00:00.000Z",
+    "stage": "GROUP D · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537334",
+    "homeId": "qatar",
+    "awayId": "switzerland",
+    "homeDisplay": "Qatar",
+    "awayDisplay": "Switzerland",
+    "kickoffUtc": "2026-06-13T19:00:00.000Z",
+    "stage": "GROUP B · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537339",
+    "homeId": "brazil",
+    "awayId": "morocco",
+    "homeDisplay": "Brazil",
+    "awayDisplay": "Morocco",
+    "kickoffUtc": "2026-06-13T22:00:00.000Z",
+    "stage": "GROUP C · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537340",
+    "homeId": "haiti",
+    "awayId": "scotland",
+    "homeDisplay": "Haiti",
+    "awayDisplay": "Scotland",
+    "kickoffUtc": "2026-06-14T01:00:00.000Z",
+    "stage": "GROUP C · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537346",
+    "homeId": "australia",
+    "awayId": "turkey",
+    "homeDisplay": "Australia",
+    "awayDisplay": "Turkey",
+    "kickoffUtc": "2026-06-14T04:00:00.000Z",
+    "stage": "GROUP D · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537351",
+    "homeId": "germany",
+    "awayId": "curacao",
+    "homeDisplay": "Germany",
+    "awayDisplay": "Curaçao",
+    "kickoffUtc": "2026-06-14T17:00:00.000Z",
+    "stage": "GROUP E · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537357",
+    "homeId": "netherlands",
+    "awayId": "japan",
+    "homeDisplay": "Netherlands",
+    "awayDisplay": "Japan",
+    "kickoffUtc": "2026-06-14T20:00:00.000Z",
+    "stage": "GROUP F · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537352",
+    "homeId": "ivory-coast",
+    "awayId": "ecuador",
+    "homeDisplay": "Ivory Coast",
+    "awayDisplay": "Ecuador",
+    "kickoffUtc": "2026-06-14T23:00:00.000Z",
+    "stage": "GROUP E · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537358",
+    "homeId": "sweden",
+    "awayId": "tunisia",
+    "homeDisplay": "Sweden",
+    "awayDisplay": "Tunisia",
+    "kickoffUtc": "2026-06-15T02:00:00.000Z",
+    "stage": "GROUP F · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537369",
+    "homeId": "spain",
+    "awayId": "cape-verde-islands",
+    "homeDisplay": "Spain",
+    "awayDisplay": "Cape Verde Islands",
+    "kickoffUtc": "2026-06-15T16:00:00.000Z",
+    "stage": "GROUP H · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537363",
+    "homeId": "belgium",
+    "awayId": "egypt",
+    "homeDisplay": "Belgium",
+    "awayDisplay": "Egypt",
+    "kickoffUtc": "2026-06-15T19:00:00.000Z",
+    "stage": "GROUP G · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537370",
+    "homeId": "saudi-arabia",
+    "awayId": "uruguay",
+    "homeDisplay": "Saudi Arabia",
+    "awayDisplay": "Uruguay",
+    "kickoffUtc": "2026-06-15T22:00:00.000Z",
+    "stage": "GROUP H · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537364",
+    "homeId": "iran",
+    "awayId": "new-zealand",
+    "homeDisplay": "Iran",
+    "awayDisplay": "New Zealand",
+    "kickoffUtc": "2026-06-16T01:00:00.000Z",
+    "stage": "GROUP G · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537391",
+    "homeId": "france",
+    "awayId": "senegal",
+    "homeDisplay": "France",
+    "awayDisplay": "Senegal",
+    "kickoffUtc": "2026-06-16T19:00:00.000Z",
+    "stage": "GROUP I · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537392",
+    "homeId": "iraq",
+    "awayId": "norway",
+    "homeDisplay": "Iraq",
+    "awayDisplay": "Norway",
+    "kickoffUtc": "2026-06-16T22:00:00.000Z",
+    "stage": "GROUP I · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537397",
+    "homeId": "argentina",
+    "awayId": "algeria",
+    "homeDisplay": "Argentina",
+    "awayDisplay": "Algeria",
+    "kickoffUtc": "2026-06-17T01:00:00.000Z",
+    "stage": "GROUP J · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537398",
+    "homeId": "austria",
+    "awayId": "jordan",
+    "homeDisplay": "Austria",
+    "awayDisplay": "Jordan",
+    "kickoffUtc": "2026-06-17T04:00:00.000Z",
+    "stage": "GROUP J · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537403",
+    "homeId": "portugal",
+    "awayId": "congo-dr",
+    "homeDisplay": "Portugal",
+    "awayDisplay": "Congo DR",
+    "kickoffUtc": "2026-06-17T17:00:00.000Z",
+    "stage": "GROUP K · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537409",
+    "homeId": "england",
+    "awayId": "croatia",
+    "homeDisplay": "England",
+    "awayDisplay": "Croatia",
+    "kickoffUtc": "2026-06-17T20:00:00.000Z",
+    "stage": "GROUP L · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537410",
+    "homeId": "ghana",
+    "awayId": "panama",
+    "homeDisplay": "Ghana",
+    "awayDisplay": "Panama",
+    "kickoffUtc": "2026-06-17T23:00:00.000Z",
+    "stage": "GROUP L · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537404",
+    "homeId": "uzbekistan",
+    "awayId": "colombia",
+    "homeDisplay": "Uzbekistan",
+    "awayDisplay": "Colombia",
+    "kickoffUtc": "2026-06-18T02:00:00.000Z",
+    "stage": "GROUP K · Matchday 1",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537329",
+    "homeId": "czechia",
+    "awayId": "south-africa",
+    "homeDisplay": "Czechia",
+    "awayDisplay": "South Africa",
+    "kickoffUtc": "2026-06-18T16:00:00.000Z",
+    "stage": "GROUP A · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537335",
+    "homeId": "switzerland",
+    "awayId": "bosnia-herzegovina",
+    "homeDisplay": "Switzerland",
+    "awayDisplay": "Bosnia-Herzegovina",
+    "kickoffUtc": "2026-06-18T19:00:00.000Z",
+    "stage": "GROUP B · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537336",
+    "homeId": "canada",
+    "awayId": "qatar",
+    "homeDisplay": "Canada",
+    "awayDisplay": "Qatar",
+    "kickoffUtc": "2026-06-18T22:00:00.000Z",
+    "stage": "GROUP B · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537330",
+    "homeId": "mexico",
+    "awayId": "south-korea",
+    "homeDisplay": "Mexico",
+    "awayDisplay": "South Korea",
+    "kickoffUtc": "2026-06-19T01:00:00.000Z",
+    "stage": "GROUP A · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537348",
+    "homeId": "united-states",
+    "awayId": "australia",
+    "homeDisplay": "United States",
+    "awayDisplay": "Australia",
+    "kickoffUtc": "2026-06-19T19:00:00.000Z",
+    "stage": "GROUP D · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537342",
+    "homeId": "scotland",
+    "awayId": "morocco",
+    "homeDisplay": "Scotland",
+    "awayDisplay": "Morocco",
+    "kickoffUtc": "2026-06-19T22:00:00.000Z",
+    "stage": "GROUP C · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537341",
+    "homeId": "brazil",
+    "awayId": "haiti",
+    "homeDisplay": "Brazil",
+    "awayDisplay": "Haiti",
+    "kickoffUtc": "2026-06-20T00:30:00.000Z",
+    "stage": "GROUP C · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537347",
+    "homeId": "turkey",
+    "awayId": "paraguay",
+    "homeDisplay": "Turkey",
+    "awayDisplay": "Paraguay",
+    "kickoffUtc": "2026-06-20T03:00:00.000Z",
+    "stage": "GROUP D · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537359",
+    "homeId": "netherlands",
+    "awayId": "sweden",
+    "homeDisplay": "Netherlands",
+    "awayDisplay": "Sweden",
+    "kickoffUtc": "2026-06-20T17:00:00.000Z",
+    "stage": "GROUP F · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537353",
+    "homeId": "germany",
+    "awayId": "ivory-coast",
+    "homeDisplay": "Germany",
+    "awayDisplay": "Ivory Coast",
+    "kickoffUtc": "2026-06-20T20:00:00.000Z",
+    "stage": "GROUP E · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537354",
+    "homeId": "ecuador",
+    "awayId": "curacao",
+    "homeDisplay": "Ecuador",
+    "awayDisplay": "Curaçao",
+    "kickoffUtc": "2026-06-21T00:00:00.000Z",
+    "stage": "GROUP E · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537360",
+    "homeId": "tunisia",
+    "awayId": "japan",
+    "homeDisplay": "Tunisia",
+    "awayDisplay": "Japan",
+    "kickoffUtc": "2026-06-21T04:00:00.000Z",
+    "stage": "GROUP F · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537371",
+    "homeId": "spain",
+    "awayId": "saudi-arabia",
+    "homeDisplay": "Spain",
+    "awayDisplay": "Saudi Arabia",
+    "kickoffUtc": "2026-06-21T16:00:00.000Z",
+    "stage": "GROUP H · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537365",
+    "homeId": "belgium",
+    "awayId": "iran",
+    "homeDisplay": "Belgium",
+    "awayDisplay": "Iran",
+    "kickoffUtc": "2026-06-21T19:00:00.000Z",
+    "stage": "GROUP G · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537372",
+    "homeId": "uruguay",
+    "awayId": "cape-verde-islands",
+    "homeDisplay": "Uruguay",
+    "awayDisplay": "Cape Verde Islands",
+    "kickoffUtc": "2026-06-21T22:00:00.000Z",
+    "stage": "GROUP H · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537366",
+    "homeId": "new-zealand",
+    "awayId": "egypt",
+    "homeDisplay": "New Zealand",
+    "awayDisplay": "Egypt",
+    "kickoffUtc": "2026-06-22T01:00:00.000Z",
+    "stage": "GROUP G · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537399",
+    "homeId": "argentina",
+    "awayId": "austria",
+    "homeDisplay": "Argentina",
+    "awayDisplay": "Austria",
+    "kickoffUtc": "2026-06-22T17:00:00.000Z",
+    "stage": "GROUP J · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537393",
+    "homeId": "france",
+    "awayId": "iraq",
+    "homeDisplay": "France",
+    "awayDisplay": "Iraq",
+    "kickoffUtc": "2026-06-22T21:00:00.000Z",
+    "stage": "GROUP I · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537394",
+    "homeId": "norway",
+    "awayId": "senegal",
+    "homeDisplay": "Norway",
+    "awayDisplay": "Senegal",
+    "kickoffUtc": "2026-06-23T00:00:00.000Z",
+    "stage": "GROUP I · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537400",
+    "homeId": "jordan",
+    "awayId": "algeria",
+    "homeDisplay": "Jordan",
+    "awayDisplay": "Algeria",
+    "kickoffUtc": "2026-06-23T03:00:00.000Z",
+    "stage": "GROUP J · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537405",
+    "homeId": "portugal",
+    "awayId": "uzbekistan",
+    "homeDisplay": "Portugal",
+    "awayDisplay": "Uzbekistan",
+    "kickoffUtc": "2026-06-23T17:00:00.000Z",
+    "stage": "GROUP K · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537411",
+    "homeId": "england",
+    "awayId": "ghana",
+    "homeDisplay": "England",
+    "awayDisplay": "Ghana",
+    "kickoffUtc": "2026-06-23T20:00:00.000Z",
+    "stage": "GROUP L · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537412",
+    "homeId": "panama",
+    "awayId": "croatia",
+    "homeDisplay": "Panama",
+    "awayDisplay": "Croatia",
+    "kickoffUtc": "2026-06-23T23:00:00.000Z",
+    "stage": "GROUP L · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537406",
+    "homeId": "colombia",
+    "awayId": "congo-dr",
+    "homeDisplay": "Colombia",
+    "awayDisplay": "Congo DR",
+    "kickoffUtc": "2026-06-24T02:00:00.000Z",
+    "stage": "GROUP K · Matchday 2",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537337",
+    "homeId": "switzerland",
+    "awayId": "canada",
+    "homeDisplay": "Switzerland",
+    "awayDisplay": "Canada",
+    "kickoffUtc": "2026-06-24T19:00:00.000Z",
+    "stage": "GROUP B · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537338",
+    "homeId": "bosnia-herzegovina",
+    "awayId": "qatar",
+    "homeDisplay": "Bosnia-Herzegovina",
+    "awayDisplay": "Qatar",
+    "kickoffUtc": "2026-06-24T19:00:00.000Z",
+    "stage": "GROUP B · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537344",
+    "homeId": "morocco",
+    "awayId": "haiti",
+    "homeDisplay": "Morocco",
+    "awayDisplay": "Haiti",
+    "kickoffUtc": "2026-06-24T22:00:00.000Z",
+    "stage": "GROUP C · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537343",
+    "homeId": "scotland",
+    "awayId": "brazil",
+    "homeDisplay": "Scotland",
+    "awayDisplay": "Brazil",
+    "kickoffUtc": "2026-06-24T22:00:00.000Z",
+    "stage": "GROUP C · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537331",
+    "homeId": "czechia",
+    "awayId": "mexico",
+    "homeDisplay": "Czechia",
+    "awayDisplay": "Mexico",
+    "kickoffUtc": "2026-06-25T01:00:00.000Z",
+    "stage": "GROUP A · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537332",
+    "homeId": "south-africa",
+    "awayId": "south-korea",
+    "homeDisplay": "South Africa",
+    "awayDisplay": "South Korea",
+    "kickoffUtc": "2026-06-25T01:00:00.000Z",
+    "stage": "GROUP A · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537355",
+    "homeId": "ecuador",
+    "awayId": "germany",
+    "homeDisplay": "Ecuador",
+    "awayDisplay": "Germany",
+    "kickoffUtc": "2026-06-25T20:00:00.000Z",
+    "stage": "GROUP E · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537356",
+    "homeId": "curacao",
+    "awayId": "ivory-coast",
+    "homeDisplay": "Curaçao",
+    "awayDisplay": "Ivory Coast",
+    "kickoffUtc": "2026-06-25T20:00:00.000Z",
+    "stage": "GROUP E · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537361",
+    "homeId": "tunisia",
+    "awayId": "netherlands",
+    "homeDisplay": "Tunisia",
+    "awayDisplay": "Netherlands",
+    "kickoffUtc": "2026-06-25T23:00:00.000Z",
+    "stage": "GROUP F · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537362",
+    "homeId": "japan",
+    "awayId": "sweden",
+    "homeDisplay": "Japan",
+    "awayDisplay": "Sweden",
+    "kickoffUtc": "2026-06-25T23:00:00.000Z",
+    "stage": "GROUP F · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537349",
+    "homeId": "turkey",
+    "awayId": "united-states",
+    "homeDisplay": "Turkey",
+    "awayDisplay": "United States",
+    "kickoffUtc": "2026-06-26T02:00:00.000Z",
+    "stage": "GROUP D · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537350",
+    "homeId": "paraguay",
+    "awayId": "australia",
+    "homeDisplay": "Paraguay",
+    "awayDisplay": "Australia",
+    "kickoffUtc": "2026-06-26T02:00:00.000Z",
+    "stage": "GROUP D · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537395",
+    "homeId": "norway",
+    "awayId": "france",
+    "homeDisplay": "Norway",
+    "awayDisplay": "France",
+    "kickoffUtc": "2026-06-26T19:00:00.000Z",
+    "stage": "GROUP I · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537396",
+    "homeId": "senegal",
+    "awayId": "iraq",
+    "homeDisplay": "Senegal",
+    "awayDisplay": "Iraq",
+    "kickoffUtc": "2026-06-26T19:00:00.000Z",
+    "stage": "GROUP I · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537373",
+    "homeId": "uruguay",
+    "awayId": "spain",
+    "homeDisplay": "Uruguay",
+    "awayDisplay": "Spain",
+    "kickoffUtc": "2026-06-27T00:00:00.000Z",
+    "stage": "GROUP H · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537374",
+    "homeId": "cape-verde-islands",
+    "awayId": "saudi-arabia",
+    "homeDisplay": "Cape Verde Islands",
+    "awayDisplay": "Saudi Arabia",
+    "kickoffUtc": "2026-06-27T00:00:00.000Z",
+    "stage": "GROUP H · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537367",
+    "homeId": "new-zealand",
+    "awayId": "belgium",
+    "homeDisplay": "New Zealand",
+    "awayDisplay": "Belgium",
+    "kickoffUtc": "2026-06-27T03:00:00.000Z",
+    "stage": "GROUP G · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537368",
+    "homeId": "egypt",
+    "awayId": "iran",
+    "homeDisplay": "Egypt",
+    "awayDisplay": "Iran",
+    "kickoffUtc": "2026-06-27T03:00:00.000Z",
+    "stage": "GROUP G · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537413",
+    "homeId": "panama",
+    "awayId": "england",
+    "homeDisplay": "Panama",
+    "awayDisplay": "England",
+    "kickoffUtc": "2026-06-27T21:00:00.000Z",
+    "stage": "GROUP L · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537414",
+    "homeId": "croatia",
+    "awayId": "ghana",
+    "homeDisplay": "Croatia",
+    "awayDisplay": "Ghana",
+    "kickoffUtc": "2026-06-27T21:00:00.000Z",
+    "stage": "GROUP L · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537407",
+    "homeId": "colombia",
+    "awayId": "portugal",
+    "homeDisplay": "Colombia",
+    "awayDisplay": "Portugal",
+    "kickoffUtc": "2026-06-27T23:30:00.000Z",
+    "stage": "GROUP K · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537408",
+    "homeId": "congo-dr",
+    "awayId": "uzbekistan",
+    "homeDisplay": "Congo DR",
+    "awayDisplay": "Uzbekistan",
+    "kickoffUtc": "2026-06-27T23:30:00.000Z",
+    "stage": "GROUP K · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537401",
+    "homeId": "jordan",
+    "awayId": "argentina",
+    "homeDisplay": "Jordan",
+    "awayDisplay": "Argentina",
+    "kickoffUtc": "2026-06-28T02:00:00.000Z",
+    "stage": "GROUP J · Matchday 3",
+    "status": "Upcoming"
+  },
+  {
+    "id": "fd-537402",
+    "homeId": "algeria",
+    "awayId": "austria",
+    "homeDisplay": "Algeria",
+    "awayDisplay": "Austria",
+    "kickoffUtc": "2026-06-28T02:00:00.000Z",
+    "stage": "GROUP J · Matchday 3",
+    "status": "Upcoming"
+  }
+]
