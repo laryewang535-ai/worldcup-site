@@ -5,9 +5,9 @@ import { GearProductGrid } from "@/components/GearProductGrid";
 import { isAffiliateEnabled } from "@/lib/affiliate";
 
 export const metadata: Metadata = {
-  title: "Gear",
+  title: "World Cup Watch Party Gear",
   description:
-    "Curated Amazon affiliate ideas for match-day comfort—neutral fan kit without official FIFA marks.",
+    "Scenario-based Amazon affiliate ideas for watch parties, stadium essentials, kids soccer gear, and summer match-day preparation.",
 };
 
 export default function GearPage() {
@@ -18,11 +18,11 @@ export default function GearPage() {
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Gear" }]} />
       <header className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
-          Fan gear picks
+          World Cup watch party and match-day gear
         </h1>
         <p className="max-w-2xl text-slate-600 dark:text-slate-400">
           {affiliateReady
-            ? "Practical match-day essentials via Amazon Associates—generic products only, no official FIFA merchandising."
+            ? "Practical scenario-based picks via Amazon Associates: stadium essentials, home viewing setup, kids soccer gear, and summer match-day preparation. Generic products only, no official FIFA merchandising."
             : "Fan gear recommendations will appear here once Amazon Associates is configured."}
         </p>
       </header>

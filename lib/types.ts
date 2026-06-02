@@ -10,12 +10,25 @@ export type MatchRecord = {
   /** ISO 8601 UTC 时间 */
   kickoffUtc: string;
   stage: string;
+  citySlug?: string;
+  stadium?: string;
   status: MatchStatus;
   homeScore?: number;
   awayScore?: number;
   /** 极简关键事件，正文为英文 */
   events?: string[];
   featured?: boolean;
+};
+
+export type CityRecord = {
+  slug: string;
+  name: string;
+  country: "Canada" | "Mexico" | "United States";
+  stadium: string;
+  timezone: string;
+  summary: string;
+  transportNotes: string[];
+  prepTips: string[];
 };
 
 export type TeamRecord = {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AFFILIATE_GEAR_PATH, isAffiliateEnabled } from "@/lib/affiliate";
 
-type Variant = "home" | "article" | "team";
+type Variant = "home" | "article" | "team" | "match" | "city";
 
 const copy: Record<
   Variant,
@@ -21,6 +21,16 @@ const copy: Record<
     title: "Prep for your team’s fixtures",
     body: "Comfortable sidelines kit and portable gear for following every stage—browse our Amazon affiliate shortlist.",
     cta: "Shop fan gear",
+  },
+  match: {
+    title: "Pack for match day",
+    body: "Clear bags, chargers, bottles, and viewing essentials for stadium trips or home watch parties.",
+    cta: "See match-day gear",
+  },
+  city: {
+    title: "City watch-guide essentials",
+    body: "Neutral travel and viewing picks for summer match days, without official tournament marks.",
+    cta: "Browse essentials",
   },
 };
 

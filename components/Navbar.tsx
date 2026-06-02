@@ -6,10 +6,12 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 
 const links = [
   { href: "/", label: "Home" },
+  { href: "/today", label: "Today" },
   { href: "/schedule", label: "Schedule" },
   { href: "/scores", label: "Scores" },
   { href: "/standings", label: "Standings" },
   { href: "/teams", label: "Teams" },
+  { href: "/cities", label: "Cities" },
   { href: "/news", label: "News" },
   { href: "/polls", label: "Polls" },
   { href: "/gear", label: "Gear" },

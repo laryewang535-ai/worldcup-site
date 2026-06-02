@@ -3,6 +3,7 @@ import type { MatchRecord } from "@/lib/types";
 import { getTeamById } from "@/lib/data/teams";
 import { TeamAvatar } from "@/components/TeamAvatar";
 import { displayMatchStatus, formatLocalKickoffLines } from "@/lib/format";
+import { matchSlug } from "@/lib/matchSeo";
 
 export function MatchCard({ match, showLink }: { match: MatchRecord; showLink?: boolean }) {
   const home = getTeamById(match.homeId);
@@ -70,7 +71,7 @@ export function MatchCard({ match, showLink }: { match: MatchRecord; showLink?: 
   if (showLink) {
     return (
       <Link
-        href={`/schedule#${match.id}`}
+        href={`/matches/${matchSlug(match)}`}
         className="block min-w-0 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-950"
       >
         {inner}

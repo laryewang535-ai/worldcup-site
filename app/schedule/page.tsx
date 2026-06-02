@@ -106,7 +106,7 @@ export default async function SchedulePage({
       <div className="space-y-6">
         {filtered.map((m, idx) => (
           <div key={m.id} id={m.id} className="space-y-4">
-            <MatchCard match={m} />
+            <MatchCard match={m} showLink />
             {idx % 4 === 3 && idx !== filtered.length - 1 ? (
               <AdSlot variant="inline" label="List advertisement" />
             ) : null}
