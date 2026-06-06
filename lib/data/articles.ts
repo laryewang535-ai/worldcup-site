@@ -53,6 +53,84 @@ export const ARTICLES: ArticleRecord[] = [
       "Calendar reminders are convenience tools, not official ticketing or broadcast notices. Always compare them with official tournament information for high-stakes planning.",
     ],
   },
+  {
+    slug: "world-cup-2026-time-zones-explained",
+    title: "World Cup 2026 Time Zones Explained",
+    publishedAt: "2026-06-01T08:40:00.000Z",
+    summary:
+      "A practical overview of why World Cup 2026 match times can look different across host cities and fan locations.",
+    category: "Explainers",
+    body: [
+      "World Cup 2026 is spread across Canada, Mexico, and the United States, which means fans may see matches listed in several local time zones. A kickoff shown in the host city may not match the time shown on your phone, calendar app, or TV guide.",
+      "The safest way to compare times is to start from the match page, check the host city, and then use the local kickoff display for your device. If you are travelling during the tournament, recheck saved calendar events after your device time zone changes.",
+      "This site keeps match times in UTC internally and displays readable local-time views on schedule, match, team, city, and today pages so global fans can plan without doing manual conversion.",
+    ],
+  },
+  {
+    slug: "add-world-cup-2026-matches-to-google-calendar",
+    title: "How to Add World Cup 2026 Matches to Google Calendar",
+    publishedAt: "2026-06-01T08:50:00.000Z",
+    summary:
+      "How single-match and team fixture calendar files can help you track kickoff times.",
+    category: "Guides",
+    body: [
+      "Calendar files are useful when you want a match reminder without repeatedly checking the schedule. A single match calendar file is best for one fixture, while a team fixture calendar is better if you follow one country throughout the group stage.",
+      "After downloading a calendar file, import it into Google Calendar, Apple Calendar, Outlook, or another calendar app that supports ICS files. Your app should display the event in your local time zone based on your device settings.",
+      "Before relying on any reminder for travel or ticketing decisions, compare it with official tournament information. Calendar files are convenience tools and may need updates if match details change.",
+    ],
+  },
+  {
+    slug: "world-cup-2026-host-cities-by-time-zone",
+    title: "World Cup 2026 Host Cities by Time Zone",
+    publishedAt: "2026-06-01T09:00:00.000Z",
+    summary:
+      "How host-city time zones affect local kickoff searches for global football fans.",
+    category: "Guides",
+    body: [
+      "The 2026 tournament host cities sit across multiple North American time zones. That matters for fans searching phrases like World Cup 2026 schedule local time, Mexico City kickoff time, New York New Jersey match time, or Los Angeles World Cup games.",
+      "City guide pages are designed to connect the host city, country, venue label, time zone, and related fixtures. This helps travelling fans and remote viewers understand why two matches on the same date may appear at very different local times.",
+      "When planning a watch party or travel day, check both the match page and the city guide. The match page focuses on the fixture, while the city guide adds venue context and preparation notes.",
+    ],
+  },
+  {
+    slug: "what-to-bring-to-a-world-cup-2026-match",
+    title: "What to Bring to a World Cup 2026 Match",
+    publishedAt: "2026-06-01T09:10:00.000Z",
+    summary:
+      "A neutral match-day checklist for fans preparing for stadium or public viewing events.",
+    category: "Guides",
+    body: [
+      "Packing rules can vary by venue, so always check official stadium guidance before match day. This checklist is intentionally neutral: it focuses on common preparation ideas rather than claiming a specific venue rule.",
+      "Useful basics may include a charged phone, portable charger, comfortable shoes, weather-appropriate layers, sunscreen for outdoor movement, and a clear bag only where transparent bags are permitted or required.",
+      "For long match days, think about timing as much as gear. Arrive early, allow extra transport time, keep ticket and ID details accessible, and avoid bringing items that official venue rules may reject.",
+    ],
+  },
+  {
+    slug: "world-cup-2026-group-stage-format-explained",
+    title: "World Cup 2026 Group Stage Format Explained",
+    publishedAt: "2026-06-01T09:20:00.000Z",
+    summary:
+      "A simple explanation of group tables, points, and why early fixtures matter.",
+    category: "Explainers",
+    body: [
+      "The group stage is where teams build their path toward the knockout rounds. Standings usually track matches played, wins, draws, losses, goals for, goals against, goal difference, and total points.",
+      "A win is worth three points, a draw is worth one point, and a loss is worth zero. When teams finish level on points, tie-break rules decide the order. Fans should check official tournament rules for the final tie-break sequence.",
+      "Before results are confirmed, standings should not be treated as predictions. This site starts group tables at zero and updates the table only when confirmed result data is available.",
+    ],
+  },
+  {
+    slug: "world-cup-2026-knockout-bracket-explained",
+    title: "World Cup 2026 Knockout Bracket Explained",
+    publishedAt: "2026-06-01T09:30:00.000Z",
+    summary:
+      "How knockout rounds differ from group matches and why fixture paths matter.",
+    category: "Explainers",
+    body: [
+      "The knockout bracket begins after the group stage and works differently from a table. Teams advance by winning individual fixtures, and the losing team is eliminated from that path of the tournament.",
+      "Knockout pages are useful once the bracket is confirmed because fans can follow possible paths by date, host city, and local kickoff time. Before the bracket is official, neutral explainers are safer than speculative predictions.",
+      "This site focuses on confirmed fixtures, local kickoff times, city context, and calendar reminders. As knockout matchups become confirmed, the same match-page structure can be used for each fixture.",
+    ],
+  },
 ];
 
 export function articleBySlug(slug: string): ArticleRecord | undefined {
