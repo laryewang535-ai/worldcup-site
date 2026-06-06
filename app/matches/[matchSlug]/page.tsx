@@ -99,7 +99,7 @@ export default async function MatchDetailPage({ params }: Props) {
         </h2>
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
           This fixture belongs to {match.stage}. Use the standings page to check points, goal difference,
-          and qualification placeholders as results update.
+          and qualification status once confirmed results are available.
         </p>
         <Link href="/standings" className="mt-4 inline-flex text-sm font-semibold text-brand-accent hover:underline">
           View group standings

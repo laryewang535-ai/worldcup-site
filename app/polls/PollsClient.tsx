@@ -12,11 +12,10 @@ const OPTIONS: Option[] = [
   { id: "setpieces", label: "Set-piece mastery decides tight games" },
 ];
 
-/** 演示基线票数（无后端时用于可视化比例） */
 const BASE: Record<string, number> = {
-  possession: 128,
-  transitions: 104,
-  setpieces: 76,
+  possession: 0,
+  transitions: 0,
+  setpieces: 0,
 };
 
 export function PollsClient() {
@@ -64,8 +63,7 @@ export function PollsClient() {
           Which playing style do you expect to dominate the knockouts?
         </h2>
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-          One vote per browser. Results update instantly on this device—swap in a backend later if you need
-          global totals.
+          One vote per browser. Results shown here are local to this device until a shared backend is connected.
         </p>
 
         <div className="mt-6 space-y-3">
@@ -102,7 +100,7 @@ export function PollsClient() {
 
         {vote ? (
           <p className="mt-4 text-sm font-medium text-emerald-700 dark:text-emerald-300">
-            Thanks — your vote is locked on this device.
+            Thanks — your local vote is locked on this device.
           </p>
         ) : (
           <p className="mt-4 text-sm text-slate-500">Tap an option to vote once.</p>

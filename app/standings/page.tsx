@@ -7,7 +7,7 @@ import { getTeamById } from "@/lib/data/teams";
 export const metadata: Metadata = {
   title: "Standings",
   description:
-    "Group tables with points, goal difference, and qualification highlighting—optimized for mobile scrolling.",
+    "World Cup 2026 group tables with points, goal difference, and qualification status once confirmed results are available.",
 };
 
 export default async function StandingsPage() {
@@ -22,8 +22,8 @@ export default async function StandingsPage() {
           Group standings
         </h1>
         <p className="max-w-2xl text-slate-600 dark:text-slate-400">
-          Tables sort by points, then goal difference, then goals scored. Top-two rows are highlighted as
-          advancing placeholders for this demo dataset.
+          Tables begin at zero before the tournament and will update when confirmed results are available.
+          Ranking uses points, goal difference, then goals scored.
         </p>
       </header>
 
@@ -55,7 +55,7 @@ export default async function StandingsPage() {
                   {standings[g].map((row, idx) => {
                     const team = getTeamById(row.teamId);
                     const gd = row.gf - row.ga;
-                    const qualified = row.qualified;
+                    const qualified = row.qualified && row.pld > 0;
                     return (
                       <tr
                         key={row.teamId}
@@ -72,7 +72,7 @@ export default async function StandingsPage() {
                           {team?.name ?? row.teamId}
                           {qualified ? (
                             <span className="ml-2 rounded-full bg-emerald-600/15 px-2 py-0.5 text-[10px] font-bold uppercase text-emerald-800 dark:text-emerald-200">
-                              Advancing
+                              Qualified
                             </span>
                           ) : null}
                         </td>

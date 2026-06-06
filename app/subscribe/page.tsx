@@ -5,7 +5,7 @@ import { SubscribeClient } from "@/app/subscribe/SubscribeClient";
 
 export const metadata: Metadata = {
   title: "Subscribe",
-  description: "Minimal newsletter capture placeholder—wire to your ESP before production use.",
+  description: "Email update signup preview for World Cup 2026 match reminders.",
 };
 
 export default function SubscribePage() {
@@ -17,7 +17,7 @@ export default function SubscribePage() {
           Email updates
         </h1>
         <p className="mx-auto max-w-2xl text-slate-600 dark:text-slate-400">
-          Drop your email if you want tournament reminders once delivery infrastructure is connected.
+          Email reminders are planned, but delivery is not connected yet.
         </p>
       </header>
 

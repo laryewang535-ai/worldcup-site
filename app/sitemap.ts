@@ -5,7 +5,7 @@ import { MATCHES } from "@/lib/data/matches";
 import { TEAMS } from "@/lib/data/teams";
 import { matchSlug } from "@/lib/matchSeo";
 
-const ORIGIN = process.env.NEXT_PUBLIC_SITE_URL ?? "https://worldcup-info-hub.example.com";
+const ORIGIN = process.env.NEXT_PUBLIC_SITE_URL ?? "https://worldcup2026-hub.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [

@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How this informational hub handles analytics placeholders, affiliate clicks, and minimal personal data.",
+    "How this informational hub handles analytics, affiliate clicks, and minimal personal data.",
 };
 
 export default function PrivacyPage() {
@@ -17,22 +17,22 @@ export default function PrivacyPage() {
 
         <h2>Overview</h2>
         <p>
-          This website is an informational resource about the 2026 finals schedule, standings, and neutral
-          editorial content. We do not operate user accounts. We do not sell personal information.
+          This website is an informational resource about the 2026 finals schedule, standings, city guides,
+          and neutral explainers. We do not operate user accounts. We do not sell personal information.
         </p>
 
         <h2>Information we collect</h2>
         <p>
           Depending on how you deploy the site, infrastructure providers (such as Vercel) may log routine
           technical data like IP addresses, user agents, and timestamps for security and reliability. We do
-          not operate a first-party database in this template build.
+          not operate a first-party database unless a feature explicitly says it stores submitted data.
         </p>
 
         <h2>Cookies and similar technologies</h2>
         <p>
           If you enable advertising tools such as Google AdSense, those vendors may set cookies or use
           similar technologies according to their own policies. You should disclose those integrations when you
-          wire them in production.
+          enable them on this site.
         </p>
 
         <h2>Analytics and session insights</h2>

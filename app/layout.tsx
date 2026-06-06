@@ -9,17 +9,17 @@ import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 import { LUCKY_ORANGE_SITE_ID } from "@/lib/luckyOrange";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://worldcup-info-hub.example.com"),
+  metadataBase: new URL("https://worldcup2026-hub.com"),
   title: {
     default: "2026 World Cup Global Info Hub",
     template: "%s · World Cup Info Hub",
   },
   description:
-    "Schedules, standings, scores, teams, and editorial previews for the 2026 finals—fast, mobile-friendly, and wagering-free.",
+    "Schedules, standings, scores, teams, host city guides, and local kickoff times for the 2026 finals—fast, mobile-friendly, and wagering-free.",
   openGraph: {
     title: "2026 World Cup Global Info Hub",
     description:
-      "Neutral schedules and standings with local kickoff times, plus concise football editorials.",
+      "Neutral schedules, standings, host city guides, and local kickoff times for World Cup 2026.",
     type: "website",
   },
 };

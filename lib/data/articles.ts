@@ -2,75 +2,55 @@ import type { ArticleRecord } from "@/lib/types";
 
 export const ARTICLES: ArticleRecord[] = [
   {
-    slug: "opening-weekend-storylines",
-    title: "Opening Weekend Storylines to Track",
-    publishedAt: "2026-06-09T10:00:00.000Z",
-    summary:
-      "Compact schedules, travel load, and early yellow-card risk could shape the first knockout pathways.",
-    category: "Previews",
-    body: [
-      "The opening weekend often sets the emotional temperature for the entire tournament. Managers must balance intensity with rotation risk, especially when the third group game arrives quickly on short rest.",
-      "Look for teams that can control tempo without overcommitting full-backs. Early goals can force reactive substitutions that echo through matchday three when margins are tight.",
-      "This hub focuses on schedules, standings, and neutral match facts—no wagering or odds discussion—so you can follow the narrative without noise.",
-    ],
-  },
-  {
-    slug: "tactical-review-high-press",
-    title: "Tactical Review: High Press vs Mid-Block",
-    publishedAt: "2026-06-07T14:30:00.000Z",
-    summary:
-      "A concise review of how two defensive shapes change transition danger and set-piece volume.",
-    category: "Reviews",
-    body: [
-      "High pressing can create quick wins, but it raises foul counts and set-piece exposure. Mid-blocks sacrifice some initiative yet can funnel attacks toward predictable wide zones.",
-      "The best teams toggle between both states within the same half, using triggers based on opponent build-up patterns rather than static lines.",
-    ],
-  },
-  {
-    slug: "team-facts-squad-rotation",
-    title: "Team Facts: Rotation Windows and Travel",
-    publishedAt: "2026-06-05T09:15:00.000Z",
-    summary:
-      "Travel distance between venues remains a practical constraint for several squads.",
-    category: "Team Facts",
-    body: [
-      "Venue clusters reduce fatigue, while cross-border trips increase recovery demands. Staff track sleep, hydration, and soft-tissue markers more aggressively during short turnarounds.",
-      "Fans can use the schedule page to compare local kickoff times and plan viewing windows without third-party apps.",
-    ],
-  },
-  {
-    slug: "player-focus-midfield-pairs",
-    title: "Player Focus: Midfield Pair Chemistry",
-    publishedAt: "2026-06-03T11:45:00.000Z",
-    summary:
-      "Why complementary profiles beat star stacking in central areas.",
-    category: "Player Focus",
-    body: [
-      "A destroyer-plus-progressor pairing remains the most stable spine for knockout football. The destroyer resets danger; the progressor advances play with fewer touches.",
-      "When both profiles overlap, lines become porous. Coaches often solve this with staggered pressing roles rather than pure man-marking.",
-    ],
-  },
-  {
-    slug: "group-stage-predictions-cautious",
-    title: "Group Stage Predictions: A Cautious Framework",
+    slug: "world-cup-2026-local-time-guide",
+    title: "How to Read World Cup 2026 Kickoff Times",
     publishedAt: "2026-06-01T08:00:00.000Z",
     summary:
-      "Use standings math, not vibes: points, goal difference, then goals scored.",
-    category: "Previews",
+      "A simple guide to UTC, host-city time zones, and device-local match times for global fans.",
+    category: "Guides",
     body: [
-      "FIFA-style tiebreakers reward clarity. When two teams are level on points, goal difference is the first separator, followed by goals scored, then head-to-head where applicable.",
-      "Our standings view mirrors that hierarchy visually so you can sanity-check scenarios as results arrive.",
+      "World Cup 2026 matches are hosted across Canada, Mexico, and the United States, so kickoff times can span several time zones. This site stores kickoff times in UTC and displays practical local-time views on schedule, team, city, and match pages.",
+      "If you are travelling, compare the listed host city with your device time before adding fixtures to your calendar. Calendar downloads are intended to make that conversion easier, but official ticketing and venue notices should always be checked before match day.",
+      "For SEO and user clarity, each match guide focuses on the teams, host city, venue context, and kickoff time rather than unconfirmed broadcast or ticket details.",
     ],
   },
   {
-    slug: "set-piece-trends-review",
-    title: "Set-Piece Trends: Ins and Outs",
-    publishedAt: "2026-05-28T16:20:00.000Z",
+    slug: "world-cup-2026-group-standings-explained",
+    title: "World Cup 2026 Group Standings Explained",
+    publishedAt: "2026-06-01T08:10:00.000Z",
     summary:
-      "Delivery shapes, screening runs, and second-ball hunting decide most dead-ball goals.",
-    category: "Reviews",
+      "What Pld, W, D, L, GF, GA, GD, and Pts mean before results start updating.",
+    category: "Explainers",
     body: [
-      "Near-post flick-ons remain popular, but far-post recycling has grown as keepers cheat centrally. Defensive coaches now assign dedicated second-ball hunters outside the six-yard box.",
+      "Group tables start at zero before confirmed results are available. Pld means matches played, W is wins, D is draws, L is losses, GF is goals for, GA is goals against, GD is goal difference, and Pts is total points.",
+      "A win is worth three points and a draw is worth one point. Goal difference and goals scored are commonly used to separate teams with the same points total, though official tournament rules should be checked for the final tie-break order.",
+      "This site avoids projected rankings before matches are played. Standings pages are designed to become more useful once verified results are available.",
+    ],
+  },
+  {
+    slug: "world-cup-2026-city-guide-checklist",
+    title: "World Cup 2026 Host City Checklist",
+    publishedAt: "2026-06-01T08:20:00.000Z",
+    summary:
+      "A neutral checklist for comparing host-city pages, venue context, and match-day preparation.",
+    category: "Guides",
+    body: [
+      "Host city pages collect venue name, country, time zone, related matches, and practical preparation notes in one place. They are designed for fans comparing travel windows and local kickoff times.",
+      "Before travelling, check official venue rules, transport notices, bag policies, and ticketing guidance. This site keeps preparation tips neutral when official details are not yet confirmed.",
+      "Useful items for long match days can include a portable charger, clear bag where required, comfortable walking shoes, weather-appropriate layers, and hydration planning within venue rules.",
+    ],
+  },
+  {
+    slug: "world-cup-2026-calendar-reminders-guide",
+    title: "Using Calendar Reminders for World Cup 2026 Matches",
+    publishedAt: "2026-06-01T08:30:00.000Z",
+    summary:
+      "How match and team calendar files help fans keep kickoff times organized.",
+    category: "Guides",
+    body: [
+      "Each match page can provide a calendar download for a single fixture, while team pages can provide a team fixture calendar. These files are especially useful when matches are shown in a time zone different from your own.",
+      "Calendar apps may display converted local times based on your device settings. If you travel during the tournament, recheck the event time after your device time zone changes.",
+      "Calendar reminders are convenience tools, not official ticketing or broadcast notices. Always compare them with official tournament information for high-stakes planning.",
     ],
   },
 ];

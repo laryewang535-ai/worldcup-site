@@ -8,7 +8,13 @@ export function ResultsTicker({ matches }: { matches: MatchRecord[] }) {
     .filter((m) => m.status === "Full Time" && m.homeScore != null && m.awayScore != null)
     .slice(0, 12);
 
-  if (!done.length) return null;
+  if (!done.length) {
+    return (
+      <div className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+        No confirmed full-time results are available yet.
+      </div>
+    );
+  }
 
   const text = done
     .map((m) => {

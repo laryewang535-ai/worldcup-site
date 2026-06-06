@@ -79,7 +79,7 @@ function buildTeams(): TeamRecord[] {
         id,
         name,
         group: g,
-        intro: `${name} enters the 2026 finals with a clear tactical identity, squad depth across Europe and domestic leagues, and supporters expecting decisive group-stage performances before the knockout rounds.`,
+        intro: `${name} has a dedicated World Cup 2026 team page for fixtures, local kickoff times, related host cities, and calendar reminders as confirmed information becomes available.`,
       });
       i++;
     }

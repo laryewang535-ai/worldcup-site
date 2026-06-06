@@ -23,7 +23,7 @@ export default function DisclaimerPage() {
 
         <h2>Data accuracy</h2>
         <p>
-          Match times, scores, and standings may rely on third-party APIs or curated demo datasets. Always
+          Match times, scores, and standings may rely on third-party APIs or curated site data. Always
           verify critical details with official sources before travel or ticketing decisions.
         </p>
 

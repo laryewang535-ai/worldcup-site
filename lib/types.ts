@@ -47,15 +47,13 @@ export type StandingRow = {
   gf: number;
   ga: number;
   pts: number;
-  /** 小组前两名高亮（演示数据简化规则） */
+  /** Qualification status once it is confirmed. */
   qualified?: boolean;
 };
 
 export type NewsCategory =
-  | "Previews"
-  | "Reviews"
-  | "Team Facts"
-  | "Player Focus";
+  | "Guides"
+  | "Explainers";
 
 export type ArticleRecord = {
   slug: string;

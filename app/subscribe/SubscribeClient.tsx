@@ -16,7 +16,7 @@ export function SubscribeClient() {
     <div className="mx-auto max-w-xl rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
       {done ? (
         <p className="text-lg font-semibold text-emerald-700 dark:text-emerald-300">
-          Thanks — hook your ESP webhook here when ready. No data was transmitted in this demo build.
+          Email capture is not connected yet. Your address was not stored.
         </p>
       ) : (
         <form onSubmit={onSubmit} className="space-y-4">
@@ -43,8 +43,7 @@ export function SubscribeClient() {
             Notify me
           </button>
           <p className="text-xs text-slate-500">
-            We do not run accounts—connect this form to Buttondown, Mailchimp, or your ESP endpoint before
-            collecting real emails.
+            This form is a preview only until an email service is connected.
           </p>
         </form>
       )}

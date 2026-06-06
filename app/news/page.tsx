@@ -6,9 +6,9 @@ import { AdSlot } from "@/components/AdSlot";
 import { formatArticleDate } from "@/lib/format";
 
 export const metadata: Metadata = {
-  title: "News",
+  title: "Guides",
   description:
-    "Editorial previews, tactical reviews, team facts, and player-focused explainers—English only.",
+    "World Cup 2026 evergreen guides for kickoff times, standings, host cities, and calendar reminders.",
 };
 
 export default async function NewsPage() {
@@ -19,11 +19,10 @@ export default async function NewsPage() {
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "News" }]} />
       <header className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
-          Newsroom
+          Guides
         </h1>
         <p className="max-w-2xl text-slate-600 dark:text-slate-400">
-          Opinion-light explainers aligned with our schedules and standings tools. Categories help scanners
-          jump to the story shape they need.
+          Evergreen explainers aligned with our schedules, standings, team pages, and city guides.
         </p>
       </header>
 

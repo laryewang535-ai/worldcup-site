@@ -14,7 +14,7 @@ import { CITIES } from "@/lib/data/cities";
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Opening countdown, featured fixtures, a three-day schedule preview, and the latest full-time results ticker.",
+    "Opening countdown, featured fixtures, host city guides, and local kickoff times for World Cup 2026.",
 };
 
 /** 首页赛程与数据源缓存对齐（默认 3 分钟，见 MATCHES_CACHE_TTL_SECONDS） */
@@ -113,8 +113,7 @@ export default async function HomePage() {
           Three-day window preview
         </h2>
         <p className="text-sm text-slate-600 dark:text-slate-400">
-          Showing the earliest triple batch of calendar dates present in the dataset—swap for live API dates in
-          production.
+          Showing the earliest available match dates currently listed on the site.
         </p>
         <div className="grid gap-4">
           {threeDay.map((m) => (
