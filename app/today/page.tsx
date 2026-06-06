@@ -57,9 +57,6 @@ export default async function TodayPage() {
         <Link href="/scores" className="rounded-lg bg-brand-navy px-4 py-2 text-sm font-semibold text-white hover:opacity-95 dark:bg-emerald-600">
           Live scores
         </Link>
-        <Link href="/subscribe" className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold hover:border-brand-accent dark:border-slate-700">
-          Get daily reminders
-        </Link>
         <Link href="/schedule" className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold hover:border-brand-accent dark:border-slate-700">
           Full schedule
         </Link>

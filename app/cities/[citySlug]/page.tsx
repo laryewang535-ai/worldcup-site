@@ -144,18 +144,6 @@ export default async function CityGuidePage({ params }: Props) {
       <AdSlot variant="inline" label="City guide advertisement" />
       <AffiliatePromoStrip variant="city" />
 
-      <section aria-labelledby="city-updates" className="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-        <h2 id="city-updates" className="text-xl font-bold text-slate-900 dark:text-white">
-          Get {city.name} match updates
-        </h2>
-        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-          Use the email updates page to connect this city guide with match reminders once your ESP is wired.
-        </p>
-        <Link href="/subscribe" className="mt-4 inline-flex rounded-lg bg-brand-navy px-4 py-2 text-sm font-semibold text-white hover:opacity-95 dark:bg-emerald-600">
-          Subscribe for updates
-        </Link>
-      </section>
-
       <AdSlot variant="bottom" />
     </div>
   );

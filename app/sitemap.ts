@@ -19,7 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/news",
     "/polls",
     "/gear",
-    "/subscribe",
     "/privacy",
     "/disclaimer",
     "/contact",

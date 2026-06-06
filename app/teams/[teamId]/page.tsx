@@ -93,9 +93,6 @@ export default function TeamDetailPage({ params }: Props) {
         >
           Add {team.name} fixtures to calendar
         </a>
-        <Link href="/subscribe" className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold hover:border-brand-accent dark:border-slate-700">
-          Get {team.name} match reminders
-        </Link>
       </div>
 
       <AffiliatePromoStrip variant="team" />

@@ -25,9 +25,6 @@ export function Footer() {
           <Link className="hover:text-brand-accent" href="/contact">
             Contact
           </Link>
-          <Link className="hover:text-brand-accent" href="/subscribe">
-            Subscribe
-          </Link>
           {isAffiliateEnabled() ? (
             <Link className="hover:text-brand-accent" href="/gear">
               Gear
