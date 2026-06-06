@@ -51,7 +51,7 @@ export function GearProductGrid({ limit }: { limit?: number } = {}) {
                     rel="nofollow sponsored noopener noreferrer"
                     className="mt-auto inline-flex w-fit rounded-lg bg-brand-accent px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
                   >
-                    Check current price
+                    View official Amazon page
                   </a>
                 </article>
               ))}
@@ -121,6 +121,22 @@ function ProductVisual({ visual, label }: { visual: string; label: string }) {
       <div className="absolute inset-x-8 bottom-5 h-3 rounded-full bg-slate-900/10 blur-md dark:bg-black/30" />
       <div className="relative flex h-full w-full items-center justify-center">
         <VisualShape visual={visual} />
+      </div>
+      <div className="absolute inset-0 bg-white/50 backdrop-blur-[2px] dark:bg-slate-950/45" />
+      <div className="absolute inset-0 flex items-center justify-center p-4">
+        <div className="max-w-[13rem] rounded-lg border border-white/70 bg-white/85 px-4 py-3 text-center shadow-lg backdrop-blur dark:border-slate-700 dark:bg-slate-950/80">
+          <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-white shadow-sm dark:bg-emerald-500">
+            <span className="relative block h-4 w-5 rounded-sm border-2 border-current">
+              <span className="absolute -left-0.5 -top-3 h-4 w-6 rounded-t-full border-2 border-current border-b-0" />
+            </span>
+          </div>
+          <div className="mt-2 text-sm font-black text-slate-900 dark:text-white">
+            Amazon preview locked
+          </div>
+          <div className="mt-1 text-xs leading-5 text-slate-600 dark:text-slate-300">
+            Use the link below to view current product images and details.
+          </div>
+        </div>
       </div>
       <div className="absolute bottom-4 left-4 rounded-md bg-white/80 px-3 py-2 shadow-sm backdrop-blur dark:bg-slate-950/65">
         <div className="text-sm font-black uppercase">{item.title}</div>
