@@ -98,7 +98,7 @@ function mapMatch(match) {
 async function fetchFootballDataMatches() {
   const token = process.env.FOOTBALL_DATA_KEY?.trim();
   if (!token) {
-    throw new Error("缺少 FOOTBALL_DATA_KEY，请在 .env.local 中配置 football-data.org Token");
+    throw new Error("Missing FOOTBALL_DATA_KEY. Configure the football-data.org token in .env.local.");
   }
 
   const competition = process.env.FOOTBALL_DATA_COMPETITION_CODE?.trim() || DEFAULT_COMPETITION;
@@ -112,7 +112,7 @@ async function fetchFootballDataMatches() {
 
   if (!res.ok) {
     const body = await res.text().catch(() => "");
-    throw new Error(`football-data 请求失败：HTTP ${res.status} ${body.slice(0, 200)}`);
+    throw new Error(`football-data request failed: HTTP ${res.status} ${body.slice(0, 200)}`);
   }
 
   const data = await res.json();
@@ -123,7 +123,7 @@ async function fetchFootballDataMatches() {
     .sort((a, b) => Date.parse(a.kickoffUtc) - Date.parse(b.kickoffUtc));
 
   if (!matches.length) {
-    throw new Error("football-data 返回成功，但没有可映射的比赛数据");
+    throw new Error("football-data returned success but no mappable match data.");
   }
 
   return matches;
@@ -144,7 +144,7 @@ async function syncOnce() {
   const matches = await fetchFootballDataMatches();
   const output = await writeJsonAtomic(outputFile, matches);
   console.log(
-    `[sync-matches] ${started.toISOString()} 写入 ${matches.length} 场比赛 -> ${output}`,
+    `[sync-matches] ${started.toISOString()} wrote ${matches.length} matches -> ${output}`,
   );
 }
 
@@ -164,7 +164,7 @@ async function main() {
     try {
       await syncOnce();
     } catch (e) {
-      console.error("[sync-matches] 同步失败：", e);
+      console.error("[sync-matches] sync failed:", e);
       if (once) process.exitCode = 1;
     }
   };
@@ -172,11 +172,11 @@ async function main() {
   await run();
   if (once) return;
 
-  console.log(`[sync-matches] 已启动定时同步，每 ${Math.round(intervalMs / 1000)} 秒刷新一次`);
+  console.log(`[sync-matches] Started scheduled sync every ${Math.round(intervalMs / 1000)} seconds.`);
   setInterval(run, intervalMs);
 }
 
 main().catch((e) => {
-  console.error("[sync-matches] 启动失败：", e);
+  console.error("[sync-matches] startup failed:", e);
   process.exit(1);
 });

@@ -4,10 +4,10 @@ export type MatchRecord = {
   id: string;
   homeId: string;
   awayId: string;
-  /** 外部数据在本地队库无记录时的展示名 */
+  /** Display name when an external team is not present in the local team catalog. */
   homeDisplay?: string;
   awayDisplay?: string;
-  /** ISO 8601 UTC 时间 */
+  /** ISO 8601 UTC time. */
   kickoffUtc: string;
   stage: string;
   citySlug?: string;
@@ -15,7 +15,7 @@ export type MatchRecord = {
   status: MatchStatus;
   homeScore?: number;
   awayScore?: number;
-  /** 极简关键事件，正文为英文 */
+  /** Minimal key events, with English body text. */
   events?: string[];
   featured?: boolean;
 };

@@ -9,7 +9,7 @@ import { resolveMatches } from "@/lib/matchesSource";
 export { http };
 
 /**
- * TheSportsDB 等其它供应商可在此扩展；当前赛程统一走 resolveMatches。
+ * Extend this module for providers such as TheSportsDB; schedules currently go through resolveMatches.
  */
 async function safeGet<T>(url: string, headers?: Record<string, string>): Promise<T | null> {
   try {
@@ -22,12 +22,12 @@ async function safeGet<T>(url: string, headers?: Record<string, string>): Promis
   }
 }
 
-/** 赛程 / 比分：见 lib/matchesSource.ts；配置 MATCHES_FEED_URL 或 FOOTBALL_DATA_KEY（.env.example） */
+/** Schedule and scores: see lib/matchesSource.ts; configure MATCHES_FEED_URL or FOOTBALL_DATA_KEY in .env.example. */
 export async function fetchSchedule(): Promise<MatchRecord[]> {
   return resolveMatches();
 }
 
-/** 与 fetchSchedule 同源；客户端轮询请改用 GET /api/matches */
+/** Uses the same source as fetchSchedule; client polling should use GET /api/matches. */
 export async function fetchScores(): Promise<MatchRecord[]> {
   return resolveMatches();
 }

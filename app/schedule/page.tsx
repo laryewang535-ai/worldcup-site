@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "Filter upcoming fixtures by local calendar day with automatic timezone conversion—no wagering content.",
 };
 
-/** 与 R2 / MATCHES_CACHE_TTL_SECONDS 对齐的 ISR 周期 */
+/** ISR interval aligned with R2 and MATCHES_CACHE_TTL_SECONDS. */
 export const revalidate = MATCHES_PAGE_REVALIDATE;
 
 function todayKey(): string {

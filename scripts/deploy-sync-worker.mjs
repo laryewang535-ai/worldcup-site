@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * 一键部署 sync-matches Worker：
- * 1. 从项目根 .env.local 读取 FOOTBALL_DATA_KEY（若存在）
+ * Deploy the sync-matches Worker:
+ * 1. Read FOOTBALL_DATA_KEY from the project-root .env.local when present.
  * 2. npm install + wrangler secret + wrangler deploy
  *
- * 需已登录 Cloudflare：npx wrangler login
- * 或设置环境变量 CLOUDFLARE_API_TOKEN
+ * Requires Cloudflare login: npx wrangler login.
+ * Or set the CLOUDFLARE_API_TOKEN environment variable.
  */
 import { readFile, writeFile } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
@@ -67,7 +67,7 @@ async function main() {
     await patchBucketName(bucketName);
   } else {
     console.warn(
-      "[deploy] 未指定 R2 Bucket。请设置 R2_BUCKET_NAME 或运行：node scripts/deploy-sync-worker.mjs --bucket=你的bucket名",
+      "[deploy] Missing R2 bucket. Set R2_BUCKET_NAME or run: node scripts/deploy-sync-worker.mjs --bucket=your-bucket-name",
     );
   }
 
@@ -80,7 +80,7 @@ async function main() {
   const env = await loadRootEnv();
   const key = process.env.FOOTBALL_DATA_KEY?.trim() || env.FOOTBALL_DATA_KEY?.trim();
   if (key) {
-    console.log("[deploy] 上传 FOOTBALL_DATA_KEY secret...");
+    console.log("[deploy] Uploading FOOTBALL_DATA_KEY secret...");
     const r = spawnSync("npx", ["wrangler", "secret", "put", "FOOTBALL_DATA_KEY"], {
       cwd: workerDir,
       input: key,
@@ -88,18 +88,18 @@ async function main() {
     });
     if (r.status !== 0) process.exit(r.status ?? 1);
   } else {
-    console.warn("[deploy] 未找到 FOOTBALL_DATA_KEY，请手动：cd workers/sync-matches && npx wrangler secret put FOOTBALL_DATA_KEY");
+    console.warn("[deploy] FOOTBALL_DATA_KEY not found. Run manually: cd workers/sync-matches && npx wrangler secret put FOOTBALL_DATA_KEY");
   }
 
   console.log("[deploy] wrangler deploy...");
   run("npx", ["wrangler", "deploy"]);
 
-  console.log("\n[deploy] 完成。手动触发同步：");
+  console.log("\n[deploy] Done. Trigger a manual sync:");
   console.log("  npm run worker:sync-once");
-  console.log("或 POST https://sync-matches-worker.<你的子域>.workers.dev/sync");
+  console.log("or POST https://sync-matches-worker.<your-subdomain>.workers.dev/sync");
 }
 
 main().catch((e) => {
-  console.error("[deploy] 失败:", e);
+  console.error("[deploy] failed:", e);
   process.exit(1);
 });

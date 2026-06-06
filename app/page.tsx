@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Opening countdown, featured fixtures, host city guides, and local kickoff times for World Cup 2026.",
 };
 
-/** 首页赛程与数据源缓存对齐（默认 3 分钟，见 MATCHES_CACHE_TTL_SECONDS） */
+/** Align homepage schedule refresh with the data-source cache; default is 3 minutes via MATCHES_CACHE_TTL_SECONDS. */
 export const revalidate = MATCHES_PAGE_REVALIDATE;
 
 export default async function HomePage() {
@@ -72,7 +72,7 @@ export default async function HomePage() {
             Full schedule
           </Link>
         </div>
-        {/* 中等屏两列、大屏三列，减轻单卡过窄导致文字挤压 */}
+        {/* Two columns on medium screens and three on large screens to keep cards readable. */}
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {featured.map((m) => (
             <MatchCard key={m.id} match={m} showLink />

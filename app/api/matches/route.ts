@@ -3,7 +3,7 @@ import { resolveMatches } from "@/lib/matchesSource";
 
 export const dynamic = "force-dynamic";
 
-/** 客户端轮询赛程/比分；服务端 resolveMatches 默认 3 分钟内存缓存，避免每次轮询都打外网 */
+/** Client polling endpoint for schedules and scores; resolveMatches uses a 3-minute memory cache by default. */
 export async function GET() {
   try {
     const matches = await resolveMatches();

@@ -65,11 +65,11 @@ function mapMatch(match) {
   };
 }
 
-/** 从 football-data 拉取并映射为 MatchRecord[] */
+/** Fetch from football-data and map to MatchRecord[]. */
 async function fetchFootballDataMatches(env) {
   const token = env.FOOTBALL_DATA_KEY?.trim();
   if (!token) {
-    throw new Error("缺少 FOOTBALL_DATA_KEY，请执行 wrangler secret put FOOTBALL_DATA_KEY");
+    throw new Error("Missing FOOTBALL_DATA_KEY. Run wrangler secret put FOOTBALL_DATA_KEY.");
   }
 
   const competition = env.FOOTBALL_DATA_COMPETITION_CODE?.trim() || "WC";
@@ -94,13 +94,13 @@ async function fetchFootballDataMatches(env) {
     .sort((a, b) => Date.parse(a.kickoffUtc) - Date.parse(b.kickoffUtc));
 
   if (!matches.length) {
-    throw new Error("football-data 返回成功，但没有可映射的比赛数据");
+    throw new Error("football-data returned success but no mappable match data.");
   }
 
   return matches;
 }
 
-/** 写入 R2 的 matches.json */
+/** Write matches.json to R2. */
 async function writeMatchesToR2(env, matches) {
   await env.MATCHES_BUCKET.put("matches.json", `${JSON.stringify(matches, null, 2)}\n`, {
     httpMetadata: {
@@ -113,7 +113,7 @@ async function writeMatchesToR2(env, matches) {
 async function syncMatches(env) {
   const matches = await fetchFootballDataMatches(env);
   await writeMatchesToR2(env, matches);
-  console.log(`[sync-matches-worker] 写入 ${matches.length} 场比赛 -> matches.json`);
+  console.log(`[sync-matches-worker] wrote ${matches.length} matches -> matches.json`);
   return { count: matches.length, syncedAt: new Date().toISOString() };
 }
 
@@ -128,7 +128,7 @@ export default {
   async scheduled(event, env, ctx) {
     ctx.waitUntil(
       syncMatches(env).catch((e) => {
-        console.error("[sync-matches-worker] 定时同步失败:", e);
+        console.error("[sync-matches-worker] scheduled sync failed:", e);
       }),
     );
   },
@@ -148,13 +148,13 @@ export default {
         const result = await syncMatches(env);
         return Response.json({ ok: true, ...result });
       } catch (e) {
-        console.error("[sync-matches-worker] 手动同步失败:", e);
+        console.error("[sync-matches-worker] manual sync failed:", e);
         return Response.json({ ok: false, error: String(e?.message ?? e) }, { status: 500 });
       }
     }
 
     return new Response(
-      "sync-matches-worker\n\nPOST /sync — 手动同步\nGET /health — 健康检查\nCron */3 * * * * — 每 3 分钟自动同步",
+      "sync-matches-worker\n\nPOST /sync - manual sync\nGET /health - health check\nCron */3 * * * * - automatic sync every 3 minutes",
       { headers: { "Content-Type": "text/plain; charset=utf-8" } },
     );
   },

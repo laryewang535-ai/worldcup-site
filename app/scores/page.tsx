@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Delayed score updates with minimalist summaries—refreshed every three minutes on the client.",
 };
 
-/** 与 R2 / MATCHES_CACHE_TTL_SECONDS 对齐的 ISR 周期 */
+/** ISR interval aligned with R2 and MATCHES_CACHE_TTL_SECONDS. */
 export const revalidate = MATCHES_PAGE_REVALIDATE;
 
 export default async function ScoresPage() {

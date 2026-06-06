@@ -1,6 +1,6 @@
-/** Google AdSense 发布商 ID（全局脚本与广告单元共用） */
+/** Google AdSense publisher ID shared by the global script and ad slots. */
 export const ADSENSE_CLIENT =
   process.env.NEXT_PUBLIC_ADSENSE_CLIENT?.trim() || "ca-pub-7763961180831088";
 
-/** 在 AdSense 后台创建展示广告单元后，填入 NEXT_PUBLIC_ADSENSE_SLOT */
+/** Set NEXT_PUBLIC_ADSENSE_SLOT after creating a display ad unit in AdSense. */
 export const ADSENSE_SLOT = process.env.NEXT_PUBLIC_ADSENSE_SLOT?.trim() || "";

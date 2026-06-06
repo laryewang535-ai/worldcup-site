@@ -1,6 +1,6 @@
 import { AFFILIATE_DISCLOSURE, isAffiliateEnabled } from "@/lib/affiliate";
 
-/** 联盟披露：仅在已配置 Tracking ID 时展示 */
+/** Affiliate disclosure: shown only when a tracking ID is configured. */
 export function AffiliateDisclosure({ className = "" }: { className?: string }) {
   if (!isAffiliateEnabled()) return null;
 

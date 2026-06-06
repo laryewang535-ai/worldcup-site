@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * POST 触发已部署的 sync-matches Worker 立即同步一次。
- * 环境变量 WORKER_SYNC_URL，默认 https://sync-matches-worker.<account>.workers.dev/sync
- * 若 Worker 配置了 SYNC_TRIGGER_TOKEN，设置 WORKER_SYNC_TOKEN。
+ * POST to trigger an immediate sync on the deployed sync-matches Worker.
+ * WORKER_SYNC_URL defaults to https://sync-matches-worker.<account>.workers.dev/sync.
+ * Set WORKER_SYNC_TOKEN when the Worker is configured with SYNC_TRIGGER_TOKEN.
  */
 const url =
   process.env.WORKER_SYNC_URL?.trim() ||
@@ -10,7 +10,7 @@ const url =
   "";
 
 if (!url) {
-  console.error("请设置 WORKER_SYNC_URL 或 --url=https://sync-matches-worker.xxx.workers.dev/sync");
+  console.error("Set WORKER_SYNC_URL or --url=https://sync-matches-worker.xxx.workers.dev/sync");
   process.exit(1);
 }
 

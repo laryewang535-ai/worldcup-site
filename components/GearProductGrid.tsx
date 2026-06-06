@@ -10,7 +10,7 @@ const CATEGORY_COPY: Record<string, string> = {
   "Home viewing setup": "Useful additions for watching fixtures at home with friends or family.",
 };
 
-/** 联盟商品网格：未配置 Tracking ID 时不展示 */
+/** Affiliate product grid: hidden unless a tracking ID is configured. */
 export function GearProductGrid({ limit }: { limit?: number } = {}) {
   if (!isAffiliateEnabled()) return null;
 
