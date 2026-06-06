@@ -11,10 +11,9 @@ export function MatchCard({ match, showLink }: { match: MatchRecord; showLink?: 
   const homeSide = home ?? { id: match.homeId, name: match.homeDisplay ?? match.homeId };
   const awaySide = away ?? { id: match.awayId, name: match.awayDisplay ?? match.awayId };
 
-  const score =
-    match.homeScore != null && match.awayScore != null
-      ? `${match.homeScore} – ${match.awayScore}`
-      : "—";
+  const shouldShowScore =
+    match.status !== "Upcoming" && match.homeScore != null && match.awayScore != null;
+  const score = shouldShowScore ? `${match.homeScore} – ${match.awayScore}` : null;
 
   const kickoffLines = formatLocalKickoffLines(match.kickoffUtc);
 
@@ -63,7 +62,9 @@ export function MatchCard({ match, showLink }: { match: MatchRecord; showLink?: 
         >
           {displayMatchStatus(match.status)}
         </span>
-        <div className="text-lg font-black tabular-nums text-slate-900 dark:text-white">{score}</div>
+        {score ? (
+          <div className="text-lg font-black tabular-nums text-slate-900 dark:text-white">{score}</div>
+        ) : null}
       </div>
     </div>
   );
