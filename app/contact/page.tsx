@@ -13,14 +13,17 @@ export default function ContactPage() {
       <header className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Contact</h1>
         <p className="max-w-2xl text-slate-600 dark:text-slate-400">
-          Use this page for factual corrections, partnership notes, or advertising inquiries once a public
-          mailbox is connected.
+          Use this page for factual corrections, partnership notes, privacy requests, or advertising
+          inquiries.
         </p>
       </header>
 
       <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
         <p className="text-slate-700 dark:text-slate-200">
-          Contact email coming soon.
+          Email:{" "}
+          <a className="font-semibold text-brand-accent hover:underline" href="mailto:ymycxlj@163.com">
+            ymycxlj@163.com
+          </a>
         </p>
         <p className="mt-4 text-sm text-slate-500">
           For privacy-specific requests, mention “Privacy Request” in the subject line so routing stays

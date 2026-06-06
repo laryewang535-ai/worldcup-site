@@ -12,6 +12,7 @@ export type GearItem = {
   description: string;
   priceLabel: string;
   imageAlt: string;
+  visual: "ball" | "goal" | "seat" | "bag" | "bottle" | "power" | "towel" | "speaker";
   /** Amazon ASIN；配置 NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG 后由 buildAmazonAffiliateUrl 生成链接 */
   asin: string;
 };
@@ -27,6 +28,7 @@ export const GEAR_ITEMS: GearItem[] = [
       "A classic, neutral soccer ball pick for casual practice, kids, and simple watch-party games without official tournament branding.",
     priceLabel: "See price on Amazon",
     imageAlt: "Classic black and white size five soccer ball",
+    visual: "ball",
     asin: "B000L2DSLK",
   },
   {
@@ -39,6 +41,7 @@ export const GEAR_ITEMS: GearItem[] = [
       "A portable goal set with carry-case appeal, useful for family match days when the tournament energy spills into the yard.",
     priceLabel: "See price on Amazon",
     imageAlt: "Portable mini football goals folded beside carrying bag",
+    visual: "goal",
     asin: "B01ABXKP2S",
   },
   {
@@ -51,6 +54,7 @@ export const GEAR_ITEMS: GearItem[] = [
       "A practical cushion-style pick for fans who expect to sit through full match windows, ceremonies, or crowded public screens.",
     priceLabel: "See price on Amazon",
     imageAlt: "Foldable stadium cushion with carry strap",
+    visual: "seat",
     asin: "B003399128",
   },
   {
@@ -63,6 +67,7 @@ export const GEAR_ITEMS: GearItem[] = [
       "A simple clear tote for match-day essentials. Always check the host venue's current bag policy before packing.",
     priceLabel: "See price on Amazon",
     imageAlt: "Transparent stadium tote bag with shoulder strap",
+    visual: "bag",
     asin: "B0D1XV6C45",
   },
   {
@@ -75,6 +80,7 @@ export const GEAR_ITEMS: GearItem[] = [
       "A reusable insulated bottle pick for fans planning around summer heat. Confirm each venue's bottle rules before bringing one inside.",
     priceLabel: "See price on Amazon",
     imageAlt: "Insulated stainless steel water bottle with straw lid",
+    visual: "bottle",
     asin: "B085DV8T75",
   },
   {
@@ -87,6 +93,7 @@ export const GEAR_ITEMS: GearItem[] = [
       "A higher-capacity charger option for fans travelling between city guides, mobile tickets, and live-score pages.",
     priceLabel: "See price on Amazon",
     imageAlt: "Compact black portable phone charger",
+    visual: "power",
     asin: "B09W9G68QY",
   },
   {
@@ -99,6 +106,7 @@ export const GEAR_ITEMS: GearItem[] = [
       "A low-cost heat-prep pick for families and travelling supporters following matches in summer conditions.",
     priceLabel: "See price on Amazon",
     imageAlt: "Rolled cooling towels in several colors",
+    visual: "towel",
     asin: "B073F1TBMR",
   },
   {
@@ -111,6 +119,7 @@ export const GEAR_ITEMS: GearItem[] = [
       "A portable speaker pick for casual home viewing setups. Use responsibly in shared spaces and public areas.",
     priceLabel: "See price on Amazon",
     imageAlt: "Portable black Bluetooth speaker on a neutral background",
+    visual: "speaker",
     asin: "B01MTB55WH",
   },
 ];
