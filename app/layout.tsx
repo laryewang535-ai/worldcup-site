@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ADSENSE_CLIENT } from "@/lib/adsense";
+import { GA_MEASUREMENT_ID } from "@/lib/analytics";
+import { LUCKY_ORANGE_SITE_ID } from "@/lib/luckyOrange";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://worldcup-info-hub.example.com"),
@@ -30,13 +32,42 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Script
-          id="adsense-loader"
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        {ADSENSE_CLIENT ? (
+          <Script
+            id="adsense-loader"
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        ) : null}
+        {GA_MEASUREMENT_ID ? (
+          <>
+            <Script
+              id="ga-loader"
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}');
+              `}
+            </Script>
+          </>
+        ) : null}
+        {LUCKY_ORANGE_SITE_ID ? (
+          <Script
+            id="lucky-orange-loader"
+            async
+            defer
+            src={`https://tools.luckyorange.com/core/lo.js?site-id=${LUCKY_ORANGE_SITE_ID}`}
+            strategy="afterInteractive"
+          />
+        ) : null}
       </head>
       <body className="min-h-screen font-sans antialiased" suppressHydrationWarning>
         <ThemeProvider>

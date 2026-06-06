@@ -35,6 +35,13 @@ export default function PrivacyPage() {
           wire them in production.
         </p>
 
+        <h2>Analytics and session insights</h2>
+        <p>
+          If enabled, analytics or session-insight tools may collect aggregated usage data, heatmaps, and
+          session interaction information to help improve site navigation and content quality. These tools are
+          provided by third-party vendors and may use cookies or similar technologies under their own policies.
+        </p>
+
         <h2>Affiliate links</h2>
         <p>
           Product links may include affiliate tracking parameters. Purchases may generate a commission at no
