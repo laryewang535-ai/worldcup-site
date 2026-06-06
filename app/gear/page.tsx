@@ -7,7 +7,7 @@ import { isAffiliateEnabled } from "@/lib/affiliate";
 export const metadata: Metadata = {
   title: "World Cup Watch Party Gear",
   description:
-    "Scenario-based Amazon affiliate ideas for watch parties, stadium essentials, kids soccer gear, and summer match-day preparation.",
+    "Curated World Cup watch party and match-day gear ideas: clear stadium bags, seat cushions, water bottles, power banks, cooling towels, soccer balls, backyard goals, and home viewing audio.",
 };
 
 export default function GearPage() {
@@ -22,7 +22,7 @@ export default function GearPage() {
         </h1>
         <p className="max-w-2xl text-slate-600 dark:text-slate-400">
           {affiliateReady
-            ? "Practical scenario-based picks via Amazon Associates: stadium essentials, home viewing setup, kids soccer gear, and summer match-day preparation. Generic products only, no official FIFA merchandising."
+            ? "Practical Amazon Associates picks for stadium prep, summer viewing, family kickabouts, and home watch parties. Generic products only, no official FIFA merchandising or tournament endorsement."
             : "Fan gear recommendations will appear here once Amazon Associates is configured."}
         </p>
       </header>
