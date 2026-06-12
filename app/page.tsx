@@ -10,6 +10,7 @@ import { MatchCard } from "@/components/MatchCard";
 import { localDateKey } from "@/lib/format";
 import { resolveCountdownKickoffMs } from "@/lib/countdownTarget";
 import { CITIES } from "@/lib/data/cities";
+import { matchSlug, matchTitle } from "@/lib/matchSeo";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -23,6 +24,12 @@ export const revalidate = MATCHES_PAGE_REVALIDATE;
 export default async function HomePage() {
   const matches = await fetchSchedule();
   const kickoffUtcMs = resolveCountdownKickoffMs(matches);
+  const nextMatch = [...matches]
+    .filter((match) => {
+      const kickoff = Date.parse(match.kickoffUtc);
+      return Number.isFinite(kickoff) && kickoff >= Date.now();
+    })
+    .sort((a, b) => Date.parse(a.kickoffUtc) - Date.parse(b.kickoffUtc))[0];
   const featured =
     matches.filter((m) => m.featured).length > 0
       ? matches.filter((m) => m.featured).slice(0, 3)
@@ -41,7 +48,18 @@ export default async function HomePage() {
     <div className="space-y-10">
       <AdSlot variant="top" />
 
-      <CountdownHero kickoffUtcMs={kickoffUtcMs} />
+      <CountdownHero
+        kickoffUtcMs={kickoffUtcMs}
+        nextKickoff={
+          nextMatch
+            ? {
+                title: matchTitle(nextMatch),
+                kickoffUtc: nextMatch.kickoffUtc,
+                href: `/matches/${matchSlug(nextMatch)}`,
+              }
+            : undefined
+        }
+      />
 
       <section aria-labelledby="today-heading" className="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">

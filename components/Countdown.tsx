@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 type Remaining = {
@@ -28,6 +29,39 @@ function parseKickoffMs(prop: number): number {
 }
 
 type GridMode = "loading" | "live" | "done";
+
+type NextKickoff = {
+  title: string;
+  kickoffUtc: string;
+  href: string;
+};
+
+function formatUtcKickoff(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "UTC time unavailable";
+  return new Intl.DateTimeFormat("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZone: "UTC",
+    timeZoneName: "short",
+  }).format(d);
+}
+
+function formatDeviceKickoff(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "Local time unavailable";
+  return new Intl.DateTimeFormat(undefined, {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZoneName: "short",
+  }).format(d);
+}
 
 function CountdownGrid({ mode, values }: { mode: GridMode; values: Remaining | null }) {
   if (mode === "done") {
@@ -70,7 +104,13 @@ function CountdownGrid({ mode, values }: { mode: GridMode; values: Remaining | n
 }
 
 /** Homepage next-kickoff countdown. The server computes kickoffUtcMs to avoid hydration mismatches. */
-export function CountdownHero({ kickoffUtcMs }: { kickoffUtcMs: number }) {
+export function CountdownHero({
+  kickoffUtcMs,
+  nextKickoff,
+}: {
+  kickoffUtcMs: number;
+  nextKickoff?: NextKickoff;
+}) {
   const targetMs = useMemo(() => parseKickoffMs(kickoffUtcMs), [kickoffUtcMs]);
   const [remaining, setRemaining] = useState<Remaining | null>(null);
 
@@ -93,6 +133,29 @@ export function CountdownHero({ kickoffUtcMs }: { kickoffUtcMs: number }) {
       </p>
 
       <CountdownGrid mode={mode} values={remaining} />
+
+      {nextKickoff ? (
+        <div className="mt-6 flex flex-col gap-4 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300/90">
+              Countdown target
+            </p>
+            <h2 className="mt-1 text-xl font-bold text-white">{nextKickoff.title}</h2>
+            <p className="mt-2 text-sm text-slate-200">
+              UTC: {formatUtcKickoff(nextKickoff.kickoffUtc)}
+            </p>
+            <p className="mt-1 text-sm text-slate-200">
+              Your local time: {formatDeviceKickoff(nextKickoff.kickoffUtc)}
+            </p>
+          </div>
+          <Link
+            href={nextKickoff.href}
+            className="inline-flex shrink-0 rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-emerald-400"
+          >
+            Match guide
+          </Link>
+        </div>
+      ) : null}
     </section>
   );
 }
