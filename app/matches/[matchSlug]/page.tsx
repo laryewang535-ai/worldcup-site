@@ -5,10 +5,12 @@ import { AdSlot } from "@/components/AdSlot";
 import { AffiliatePromoStrip } from "@/components/AffiliatePromoStrip";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { MatchCard } from "@/components/MatchCard";
+import { fetchSchedule } from "@/lib/api";
 import { cityForMatch } from "@/lib/data/cities";
 import { MATCHES } from "@/lib/data/matches";
 import { getTeamById } from "@/lib/data/teams";
 import { formatLocalKickoff } from "@/lib/format";
+import { MATCHES_PAGE_REVALIDATE } from "@/lib/matchesSource";
 import { findMatchBySlug, matchSlug, matchTitle } from "@/lib/matchSeo";
 
 type Props = { params: { matchSlug: string } };
@@ -17,8 +19,11 @@ export async function generateStaticParams() {
   return MATCHES.map((match) => ({ matchSlug: matchSlug(match) }));
 }
 
+export const revalidate = MATCHES_PAGE_REVALIDATE;
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const match = findMatchBySlug(MATCHES, params.matchSlug);
+  const matches = await fetchSchedule();
+  const match = findMatchBySlug(matches, params.matchSlug) ?? findMatchBySlug(MATCHES, params.matchSlug);
   if (!match) return { title: "World Cup match" };
   const title = matchTitle(match);
   const city = cityForMatch(match);
@@ -29,8 +34,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function MatchDetailPage({ params }: Props) {
-  const matches = MATCHES;
-  const match = findMatchBySlug(matches, params.matchSlug);
+  const matches = await fetchSchedule();
+  const match = findMatchBySlug(matches, params.matchSlug) ?? findMatchBySlug(MATCHES, params.matchSlug);
   if (!match) notFound();
 
   const city = cityForMatch(match);

@@ -69,7 +69,7 @@ function CountdownGrid({ mode, values }: { mode: GridMode; values: Remaining | n
   );
 }
 
-/** 首页开幕倒计时；kickoffUtcMs 由服务端根据赛程或环境变量算出，避免 hydration 数字不一致 */
+/** 首页下一场开赛倒计时；kickoffUtcMs 由服务端根据赛程或环境变量算出，避免 hydration 数字不一致 */
 export function CountdownHero({ kickoffUtcMs }: { kickoffUtcMs: number }) {
   const targetMs = useMemo(() => parseKickoffMs(kickoffUtcMs), [kickoffUtcMs]);
   const [remaining, setRemaining] = useState<Remaining | null>(null);
@@ -85,11 +85,11 @@ export function CountdownHero({ kickoffUtcMs }: { kickoffUtcMs: number }) {
 
   return (
     <section className="rounded-2xl bg-gradient-to-br from-brand-navy to-slate-900 p-8 text-white shadow-xl">
-      <p className="text-sm uppercase tracking-widest text-emerald-300/90">Countdown to kickoff</p>
+      <p className="text-sm uppercase tracking-widest text-emerald-300/90">Next kickoff</p>
       <h1 className="mt-2 text-3xl font-bold tracking-tight md:text-4xl">2026 World Cup Global Info Hub</h1>
       <p className="mt-3 max-w-2xl text-slate-200">
-        Neutral schedules, standings, and news—built for fast loading, mobile screens, and clear local kickoff
-        times.
+        The tournament is underway. Track the next available kickoff, local times, schedules, standings, and
+        visitor guides.
       </p>
 
       <CountdownGrid mode={mode} values={remaining} />

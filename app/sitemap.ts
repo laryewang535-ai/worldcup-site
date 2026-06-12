@@ -1,13 +1,15 @@
 import type { MetadataRoute } from "next";
 import { ARTICLES } from "@/lib/data/articles";
 import { CITIES } from "@/lib/data/cities";
-import { MATCHES } from "@/lib/data/matches";
+import { fetchSchedule } from "@/lib/api";
 import { TEAMS } from "@/lib/data/teams";
 import { matchSlug } from "@/lib/matchSeo";
 
 const ORIGIN = process.env.NEXT_PUBLIC_SITE_URL ?? "https://worldcup2026-hub.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const schedule = await fetchSchedule();
+
   const staticRoutes = [
     "/",
     "/today",
@@ -43,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.55,
   }));
 
-  const matches = MATCHES.map((m) => ({
+  const matches = schedule.map((m) => ({
     url: `${ORIGIN}/matches/${matchSlug(m)}`,
     lastModified: new Date(m.kickoffUtc),
     changeFrequency: "daily" as const,
