@@ -1,7 +1,7 @@
 import { AxiosError } from "axios";
 import type { ArticleRecord, MatchRecord } from "@/lib/types";
 import { ARTICLES } from "@/lib/data/articles";
-import { getStandingsByGroup } from "@/lib/data/standings";
+import { getStandingsByGroupFromMatches } from "@/lib/data/standings";
 import { TEAMS } from "@/lib/data/teams";
 import { http } from "@/lib/http";
 import { resolveMatches } from "@/lib/matchesSource";
@@ -33,7 +33,8 @@ export async function fetchScores(): Promise<MatchRecord[]> {
 }
 
 export async function fetchStandings() {
-  return getStandingsByGroup();
+  const matches = await resolveMatches();
+  return getStandingsByGroupFromMatches(matches);
 }
 
 export async function fetchTeams() {
