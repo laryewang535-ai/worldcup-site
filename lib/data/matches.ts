@@ -1,6 +1,6 @@
 import type { MatchRecord } from "@/lib/types";
 
-/** 演示赛程：无版权结构化占位数据，可替换为 API 返回 */
+/** Demo schedule: copyright-safe structured placeholder data, replaceable with API results. */
 export const MATCHES: MatchRecord[] = [
   {
     id: "m-001",

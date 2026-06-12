@@ -35,8 +35,8 @@ const copy: Record<
 };
 
 /**
- * 轻量联盟导流条：高意图页面展示，未配置 tag 时不渲染。
- * 主转化在 /gear 详情页完成。
+ * Lightweight affiliate promo strip for high-intent pages; hidden when no tag is configured.
+ * The main conversion path continues on the /gear detail page.
  */
 export function AffiliatePromoStrip({ variant }: { variant: Variant }) {
   if (!isAffiliateEnabled()) return null;

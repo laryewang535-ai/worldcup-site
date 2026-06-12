@@ -33,11 +33,11 @@ function CountdownGrid({ mode, values }: { mode: GridMode; values: Remaining | n
   if (mode === "done") {
     return (
       <div className="mt-8 rounded-xl border border-white/10 bg-white/5 px-4 py-6 text-center backdrop-blur">
-        <p className="text-lg font-semibold text-emerald-300">当前倒计时目标已过</p>
+        <p className="text-lg font-semibold text-emerald-300">The current countdown target has passed.</p>
         <p className="mt-2 text-sm text-slate-200">
-          请查看下方赛程获取下一场开赛时间；或在环境变量{" "}
+          Check the schedule below for the next kickoff, or set a future UTC kickoff time in{" "}
           <code className="rounded bg-white/10 px-1 py-0.5 text-xs">NEXT_PUBLIC_COUNTDOWN_TARGET_ISO</code>{" "}
-          中指定未来的 UTC 开赛时刻以重新启用倒计时。
+          to enable the countdown again.
         </p>
       </div>
     );
@@ -69,7 +69,7 @@ function CountdownGrid({ mode, values }: { mode: GridMode; values: Remaining | n
   );
 }
 
-/** 首页下一场开赛倒计时；kickoffUtcMs 由服务端根据赛程或环境变量算出，避免 hydration 数字不一致 */
+/** Homepage next-kickoff countdown. The server computes kickoffUtcMs to avoid hydration mismatches. */
 export function CountdownHero({ kickoffUtcMs }: { kickoffUtcMs: number }) {
   const targetMs = useMemo(() => parseKickoffMs(kickoffUtcMs), [kickoffUtcMs]);
   const [remaining, setRemaining] = useState<Remaining | null>(null);

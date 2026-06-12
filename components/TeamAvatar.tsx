@@ -17,7 +17,7 @@ function hueFromId(id: string): number {
   return h;
 }
 
-/** 无版权队徽占位：首字母色块 */
+/** Copyright-safe team crest placeholder using initials and color blocks. */
 export function TeamAvatar({
   team,
   size = "md",

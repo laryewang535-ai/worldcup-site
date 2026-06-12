@@ -19,7 +19,7 @@ declare global {
   }
 }
 
-/** AdSense 广告位：不遮挡主内容、无弹窗 */
+/** AdSense slot: no content overlays and no pop-ups. */
 export function AdSlot({
   variant,
   label = "Advertisement",
@@ -36,11 +36,11 @@ export function AdSlot({
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch {
-      // 脚本未加载完成时忽略
+      // Ignore until the script has finished loading.
     }
   }, [hasUnit]);
 
-  // 未配置手动广告单元时不占位（自动广告由 layout 全局脚本处理）
+  // Do not reserve space without a manual ad slot; auto ads are handled by the global layout script.
   if (!hasUnit) return null;
 
   return (

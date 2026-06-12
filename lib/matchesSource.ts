@@ -4,10 +4,10 @@ import { fetchMatchesFromFootballData } from "@/lib/live/footballData";
 
 const MOCK: MatchRecord[] = MATCHES;
 
-/** 默认 3 分钟：与比分页轮询间隔一致，减轻外网与自建 BFF 压力 */
+/** Default is 3 minutes, matching the scores polling interval to reduce upstream and BFF load. */
 const DEFAULT_CACHE_TTL_SECONDS = 180;
 
-/** 页面 ISR revalidate（秒），与 R2 fetch 及内存缓存默认对齐 */
+/** Page ISR revalidate value in seconds, aligned with R2 fetch and memory-cache defaults. */
 export const MATCHES_PAGE_REVALIDATE = DEFAULT_CACHE_TTL_SECONDS;
 
 function isMatchRecord(x: unknown): x is MatchRecord {
@@ -27,19 +27,19 @@ function isMatchRecord(x: unknown): x is MatchRecord {
   return true;
 }
 
-/** 统一读取「赛程 JSON 地址」：新变量优先，兼容旧名 MATCHES_JSON_URL */
+/** Read the schedule JSON URL; the new variable wins while MATCHES_JSON_URL remains supported. */
 function resolveFeedUrl(): string | undefined {
   const primary = process.env.MATCHES_FEED_URL?.trim();
   if (primary) return primary;
   return process.env.MATCHES_JSON_URL?.trim() || undefined;
 }
 
-/** 浅拷贝赛程行，避免缓存数组被调用方 mutate */
+/** Shallow-copy match rows so callers cannot mutate the cached array. */
 function cloneRecords(rows: MatchRecord[]): MatchRecord[] {
   return rows.map((m) => ({ ...m, events: m.events ? [...m.events] : undefined }));
 }
 
-/** 用于命中缓存：配置不变则复用同一份 TTL */
+/** Cache key helper: unchanged configuration reuses the same TTL entry. */
 function cacheIdentityKey(): string {
   return [
     process.env.MATCHES_FEED_URL ?? "",
@@ -50,7 +50,7 @@ function cacheIdentityKey(): string {
   ].join("\t");
 }
 
-/** 缓存时长（秒），未设置或非法时使用默认 180 秒 */
+/** Cache duration in seconds; unset or invalid values fall back to 180 seconds. */
 function cacheTtlSeconds(): number {
   const raw = process.env.MATCHES_CACHE_TTL_SECONDS?.trim();
   const n = raw ? Number(raw) : NaN;
@@ -65,7 +65,7 @@ function cacheTtlMs(): number {
 type MemoryCache = { key: string; expires: number; matches: MatchRecord[] };
 let memoryCache: MemoryCache | null = null;
 
-/** 从 HTTPS 地址拉取 MatchRecord[]；可选 Authorization 头（如 Bearer token） */
+/** Fetch MatchRecord[] from an HTTPS URL with an optional Authorization header, such as a bearer token. */
 async function tryRemoteMatchesJson(url: string): Promise<MatchRecord[] | null> {
   const ac = new AbortController();
   const timer = setTimeout(() => ac.abort(), 12_000);
@@ -84,17 +84,17 @@ async function tryRemoteMatchesJson(url: string): Promise<MatchRecord[] | null> 
     }
     const data = (await res.json()) as unknown;
     if (!Array.isArray(data)) {
-      console.warn("[matchesSource] feed JSON 根节点须为数组");
+      console.warn("[matchesSource] feed JSON root must be an array");
       return null;
     }
     const parsed = data.filter(isMatchRecord);
     if (!parsed.length) {
-      console.warn("[matchesSource] feed 中无合法 MatchRecord，请对照 lib/types.ts");
+      console.warn("[matchesSource] feed contains no valid MatchRecord entries; check lib/types.ts");
       return null;
     }
     return parsed;
   } catch (e) {
-    console.warn("[matchesSource] feed 请求失败", e);
+    console.warn("[matchesSource] feed request failed", e);
     return null;
   } finally {
     clearTimeout(timer);
@@ -102,7 +102,7 @@ async function tryRemoteMatchesJson(url: string): Promise<MatchRecord[] | null> 
 }
 
 /**
- * 实际拉取一次外网（无应用层缓存）。fromRemote=true 表示来自 feed 或 football-data。
+ * Perform one upstream fetch without application-level caching. fromRemote=true means data came from feed or football-data.
  */
 async function fetchRemoteMatchesOnce(): Promise<{ matches: MatchRecord[]; fromRemote: boolean }> {
   const feedUrl = resolveFeedUrl();
@@ -119,19 +119,19 @@ async function fetchRemoteMatchesOnce(): Promise<{ matches: MatchRecord[]; fromR
   }
 
   if (feedUrl || token) {
-    console.warn("[matchesSource] 已配置外网数据源但拉取失败或为空，已回退演示数据");
+    console.warn("[matchesSource] remote source is configured but failed or returned empty data; falling back to demo data");
   }
   return { matches: MOCK, fromRemote: false };
 }
 
 /**
- * 统一赛程数据源（配置尽量简单）：
- * 1. MATCH_DATA_SOURCE=mock → 始终本地演示数据（不缓存）
- * 2. MATCHES_FEED_URL（或兼容 MATCHES_JSON_URL）→ GET MatchRecord[] JSON
+ * Unified schedule data source with intentionally simple configuration:
+ * 1. MATCH_DATA_SOURCE=mock -> always use local demo data without caching.
+ * 2. MATCHES_FEED_URL, or legacy MATCHES_JSON_URL -> GET MatchRecord[] JSON.
  * 3. FOOTBALL_DATA_KEY → football-data.org
- * 4. 以上都不可用 → 本地 mock
+ * 4. If none are available -> local mock data.
  *
- * 外网成功结果在进程内缓存 MATCHES_CACHE_TTL_SECONDS（默认 180），减少重复请求。
+ * Successful remote results are cached in-process for MATCHES_CACHE_TTL_SECONDS, default 180, to reduce repeat requests.
  */
 export async function resolveMatches(): Promise<MatchRecord[]> {
   try {
@@ -156,7 +156,7 @@ export async function resolveMatches(): Promise<MatchRecord[]> {
 
     return matches;
   } catch (e) {
-    console.error("[matchesSource] resolveMatches 异常，回退 mock", e);
+    console.error("[matchesSource] resolveMatches failed; falling back to mock data", e);
     memoryCache = null;
     return MOCK;
   }

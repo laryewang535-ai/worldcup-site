@@ -12,6 +12,7 @@ const OPTIONS: Option[] = [
   { id: "setpieces", label: "Set-piece mastery decides tight games" },
 ];
 
+/** Demo baseline vote counts used for visual proportions without a backend. */
 const BASE: Record<string, number> = {
   possession: 0,
   transitions: 0,

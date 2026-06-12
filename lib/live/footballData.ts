@@ -24,7 +24,7 @@ function mapFdStatus(raw: string | undefined): MatchStatus {
   const u = (raw ?? "").toUpperCase();
   if (u === "FINISHED" || u === "AWARDED") return "Full Time";
   if (u === "LIVE" || u === "IN_PLAY" || u === "PAUSED") return "Live";
-  // football-data v4：SCHEDULED / TIMED / POSTPONED 等未开赛状态
+  // football-data v4: SCHEDULED, TIMED, POSTPONED, and similar pre-kickoff states.
   return "Upcoming";
 }
 
@@ -64,8 +64,8 @@ function mapOne(m: FdMatch): MatchRecord | null {
 }
 
 /**
- * 从 football-data.org 拉取指定赛事赛程（需 FOOTBALL_DATA_KEY）。
- * 免费档可能对 WC 有限制；失败时返回 null，由上层回退 mock。
+ * Fetch a competition schedule from football-data.org; requires FOOTBALL_DATA_KEY.
+ * The free tier may restrict WC access; failures return null so the caller can fall back to mock data.
  */
 export async function fetchMatchesFromFootballData(
   token: string,

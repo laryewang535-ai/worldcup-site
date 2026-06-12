@@ -1,4 +1,4 @@
-/** 与队库 id 规则一致：用于外部队名映射 */
+/** Matches the team catalog ID rules and is used for external team-name mapping. */
 export function slugify(name: string): string {
   return name
     .toLowerCase()

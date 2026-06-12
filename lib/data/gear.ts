@@ -13,7 +13,7 @@ export type GearItem = {
   priceLabel: string;
   imageAlt: string;
   visual: "ball" | "goal" | "seat" | "bag" | "bottle" | "power" | "towel" | "speaker";
-  /** Amazon ASIN；配置 NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG 后由 buildAmazonAffiliateUrl 生成链接 */
+  /** Amazon ASIN; buildAmazonAffiliateUrl creates the link when NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG is set. */
   asin: string;
 };
 

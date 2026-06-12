@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { MatchRecord } from "@/lib/types";
 import { MatchCard } from "@/components/MatchCard";
 import { AdSlot } from "@/components/AdSlot";
+import { formatLocalSyncTime } from "@/lib/format";
 
 function sortMatches(list: MatchRecord[]): MatchRecord[] {
   return [...list].sort((a, b) => {
@@ -54,7 +55,7 @@ export function ScoresClient({ initial }: { initial: MatchRecord[] }) {
           Auto-refresh every 3 minutes (delayed scores). No odds or wagering content.
         </p>
         <p className="text-xs text-slate-500" suppressHydrationWarning>
-          Last sync: {lastSync.toLocaleString()}
+          Last sync: {formatLocalSyncTime(lastSync)}
         </p>
       </div>
       {error ? <p className="text-sm text-amber-700 dark:text-amber-300">{error}</p> : null}

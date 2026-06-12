@@ -20,7 +20,7 @@ export function MatchCard({ match, showLink }: { match: MatchRecord; showLink?: 
   const inner = (
     <div className="flex min-h-0 min-w-0 flex-col gap-4 overflow-hidden rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
       <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
-        {/* 主队 / 客队：允许换行，避免与右侧元数据抢宽度 */}
+        {/* Home and away teams can wrap to avoid crowding the metadata column. */}
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2 sm:gap-x-4">
             <div className="flex min-w-0 max-w-full items-center gap-2">
@@ -38,7 +38,7 @@ export function MatchCard({ match, showLink }: { match: MatchRecord; showLink?: 
             </div>
           </div>
         </div>
-        {/* 赛段 + 分多行展示开赛时间，右对齐且可换行 */}
+        {/* Stage plus multiline kickoff details, right-aligned on wider screens. */}
         <div className="w-full shrink-0 text-left text-xs leading-snug text-slate-600 dark:text-slate-400 sm:w-[7.5rem] sm:text-right md:w-[9.25rem]">
           <div className="break-words font-medium text-slate-700 dark:text-slate-300">{match.stage}</div>
           <div className="mt-1.5 space-y-0.5">
