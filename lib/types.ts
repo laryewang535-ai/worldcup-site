@@ -40,6 +40,7 @@ export type TeamRecord = {
 
 export type StandingRow = {
   teamId: string;
+  teamName?: string;
   pld: number;
   w: number;
   d: number;

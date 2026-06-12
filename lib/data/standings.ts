@@ -50,9 +50,72 @@ function sortRows(rows: StandingRow[]): StandingRow[] {
   });
 }
 
+function emptyRow(teamId: string, teamName?: string): StandingRow {
+  return {
+    teamId,
+    teamName,
+    pld: 0,
+    w: 0,
+    d: 0,
+    l: 0,
+    gf: 0,
+    ga: 0,
+    pts: 0,
+    qualified: false,
+  };
+}
+
+function groupFromStage(stage: string): string | null {
+  const match = stage.match(/\bGROUP\s+([A-Z])\b/i);
+  return match?.[1]?.toUpperCase() ?? null;
+}
+
 export function getStandingsByGroupFromMatches(matches: MatchRecord[]): Record<string, StandingRow[]> {
+  const remoteStandings: Record<string, StandingRow[]> = {};
+  const remoteRowByGroupTeam = new Map<string, StandingRow>();
+
+  for (const match of matches) {
+    const group = groupFromStage(match.stage);
+    if (!group) continue;
+
+    remoteStandings[group] = remoteStandings[group] ?? [];
+    for (const side of [
+      { id: match.homeId, name: match.homeDisplay },
+      { id: match.awayId, name: match.awayDisplay },
+    ]) {
+      const key = `${group}:${side.id}`;
+      if (remoteRowByGroupTeam.has(key)) continue;
+      const row = emptyRow(side.id, side.name);
+      remoteRowByGroupTeam.set(key, row);
+      remoteStandings[group].push(row);
+    }
+  }
+
+  if (remoteRowByGroupTeam.size > 0) {
+    for (const match of matches) {
+      const group = groupFromStage(match.stage);
+      if (
+        !group ||
+        match.status !== "Full Time" ||
+        typeof match.homeScore !== "number" ||
+        typeof match.awayScore !== "number"
+      ) {
+        continue;
+      }
+
+      const home = remoteRowByGroupTeam.get(`${group}:${match.homeId}`);
+      const away = remoteRowByGroupTeam.get(`${group}:${match.awayId}`);
+      if (!home || !away) continue;
+
+      applyResult(home, away, match.homeScore, match.awayScore);
+    }
+
+    return Object.fromEntries(
+      Object.entries(remoteStandings).map(([group, rows]) => [group, sortRows(rows)]),
+    );
+  }
+
   const standings = cloneSeed();
-  const teamGroups = Object.fromEntries(TEAMS.map((team) => [team.id, team.group]));
   const rowByTeam = new Map<string, StandingRow>();
 
   for (const rows of Object.values(standings)) {
@@ -72,34 +135,35 @@ export function getStandingsByGroupFromMatches(matches: MatchRecord[]): Record<s
 
     const home = rowByTeam.get(match.homeId);
     const away = rowByTeam.get(match.awayId);
-    if (!home || !away || teamGroups[match.homeId] !== teamGroups[match.awayId]) {
-      continue;
-    }
-
-    home.pld += 1;
-    away.pld += 1;
-    home.gf += match.homeScore;
-    home.ga += match.awayScore;
-    away.gf += match.awayScore;
-    away.ga += match.homeScore;
-
-    if (match.homeScore > match.awayScore) {
-      home.w += 1;
-      home.pts += 3;
-      away.l += 1;
-    } else if (match.homeScore < match.awayScore) {
-      away.w += 1;
-      away.pts += 3;
-      home.l += 1;
-    } else {
-      home.d += 1;
-      away.d += 1;
-      home.pts += 1;
-      away.pts += 1;
-    }
+    if (!home || !away) continue;
+    applyResult(home, away, match.homeScore, match.awayScore);
   }
 
   return Object.fromEntries(
     Object.entries(standings).map(([group, rows]) => [group, sortRows(rows)]),
   );
+}
+
+function applyResult(home: StandingRow, away: StandingRow, homeScore: number, awayScore: number) {
+  home.pld += 1;
+  away.pld += 1;
+  home.gf += homeScore;
+  home.ga += awayScore;
+  away.gf += awayScore;
+  away.ga += homeScore;
+
+  if (homeScore > awayScore) {
+    home.w += 1;
+    home.pts += 3;
+    away.l += 1;
+  } else if (homeScore < awayScore) {
+    away.w += 1;
+    away.pts += 3;
+    home.l += 1;
+  } else {
+    home.d += 1;
+    away.d += 1;
+    home.pts += 1;
+    away.pts += 1;
+  }
 }

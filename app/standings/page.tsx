@@ -69,7 +69,7 @@ export default async function StandingsPage() {
                       >
                         <td className="px-3 py-2 font-semibold tabular-nums">{idx + 1}</td>
                         <td className="px-3 py-2 font-medium text-slate-900 dark:text-slate-50">
-                          {team?.name ?? row.teamId}
+                          {team?.name ?? row.teamName ?? row.teamId}
                           {qualified ? (
                             <span className="ml-2 rounded-full bg-emerald-600/15 px-2 py-0.5 text-[10px] font-bold uppercase text-emerald-800 dark:text-emerald-200">
                               Qualified
